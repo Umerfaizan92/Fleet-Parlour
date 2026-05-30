@@ -615,6 +615,29 @@ p { font-weight: 400; }
   border-color: var(--gold) !important;
 }
 
+/* WhatsApp */
+
+.fleet-whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#000;
+    color:#D4AF37;
+    border:2px solid #D4AF37;
+    padding:12px 22px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    letter-spacing:0.5px;
+    box-shadow:0 4px 15px rgba(212,175,55,0.3);
+    z-index:9999;
+    transition:all .3s ease;
+}
+
+.fleet-whatsapp:hover{
+    background:#D4AF37;
+    color:#000;
+}
   /* Footer */
 
 .site-footer{
