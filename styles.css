@@ -675,7 +675,7 @@ p { font-weight: 400; }
 }
 
 .fleet-wa-safe:active{
-    transform: scale(0.75);
+    transform: scale(0.65);
   transform-origin:bottom right;
 }
 
@@ -694,6 +694,38 @@ p { font-weight: 400; }
             0 0 15px rgba(212,175,55,.8),
             0 0 35px rgba(212,175,55,.5);
     }
+  .fleet-wa-safe{
+    right:10px !important;
+    bottom:10px !important;
+    gap:6px !important;
+
+    padding:4px 10px 4px 4px !important;
+
+    border:2px solid #D4AF37 !important;
+    border-radius:40px !important;
+}
+
+.fleet-wa-icon{
+    width:30px !important;
+    height:30px !important;
+    min-width:30px !important;
+
+    border:2px solid #D4AF37 !important;
+}
+
+.fleet-wa-icon i{
+    font-size:14px !important;
+}
+
+.fleet-wa-words span{
+    font-size:10px !important;
+    line-height:1 !important;
+}
+
+.fleet-wa-words b{
+    font-size:13px !important;
+    line-height:1 !important;
+}
 }
 
   /* Footer */
