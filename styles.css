@@ -616,7 +616,41 @@ p { font-weight: 400; }
 }
 
       /* WhatsApp */
+.fp-fixed-wa{
+  position:fixed !important;
+  right:12px !important;
+  bottom:18px !important;
+  z-index:999999 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  background:#000 !important;
+  border:2px solid #d4af37 !important;
+  border-radius:999px !important;
+  padding:5px 10px !important;
+  text-decoration:none !important;
+  box-shadow:0 0 12px rgba(212,175,55,.6) !important;
+}
 
+.fp-fixed-wa-icon{
+  color:#d4af37 !important;
+  font-size:18px !important;
+  line-height:1 !important;
+}
+
+.fp-fixed-wa small{
+  display:block !important;
+  color:#fff !important;
+  font-size:9px !important;
+  line-height:1 !important;
+}
+
+.fp-fixed-wa b{
+  display:block !important;
+  color:#d4af37 !important;
+  font-size:12px !important;
+  line-height:1.1 !important;
+}
       
   /* Footer */
 
