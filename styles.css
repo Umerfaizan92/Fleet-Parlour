@@ -617,55 +617,7 @@ p { font-weight: 400; }
 
 /* WhatsApp */
 
-#whatsapp-help{
-<style>
-#whatsapp-help{
-  position:fixed !important;
-  right:16px !important;
-  bottom:20px !important;
-  z-index:999999 !important;
-  display:flex !important;
-  align-items:center !important;
-  gap:12px !important;
-  background:#050505 !important;
-  border:3px solid #d9a441 !important;
-  border-radius:999px !important;
-  padding:10px 18px 10px 10px !important;
-  text-decoration:none !important;
-  box-shadow:0 0 20px rgba(217,164,65,.9),0 0 55px rgba(217,164,65,.55) !important;
-}
 
-#whatsapp-help:hover{
-  transform:scale(1.05) translateY(-4px) !important;
-}
-
-#whatsapp-help .wa-circle{
-  width:48px !important;
-  height:48px !important;
-  border:3px solid #d9a441 !important;
-  border-radius:50% !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  color:#d9a441 !important;
-  font-size:28px !important;
-  box-shadow:0 0 15px rgba(217,164,65,.9) !important;
-}
-
-#whatsapp-help em{
-  display:block !important;
-  color:#fff !important;
-  font-style:normal !important;
-  font-size:15px !important;
-}
-
-#whatsapp-help b{
-  display:block !important;
-  color:#d9a441 !important;
-  font-size:18px !important;
-  text-shadow:0 0 8px rgba(217,164,65,.8) !important;
-}
-</style>
   /* Footer */
 
 .site-footer{
