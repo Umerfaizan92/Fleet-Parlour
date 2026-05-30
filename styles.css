@@ -684,39 +684,109 @@ p { font-weight: 400; }
 
   text-decoration:none !important;
   box-shadow:0 0 18px rgba(212,175,55,.45) !important;
+.whatsapp-premium{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    background:#000;
+    border:3px solid #d4af37;
+    border-radius:80px;
+
+    padding:16px 28px 16px 16px;
+
+    text-decoration:none;
+
+    /* GOLD GLOW */
+    box-shadow:
+        0 0 8px rgba(212,175,55,.7),
+        0 0 18px rgba(212,175,55,.5),
+        0 0 40px rgba(212,175,55,.35);
+
+    transition:all .35s ease;
 }
 
-.fp-wa-circle{
-  width:46px !important;
-  height:46px !important;
-  border:2px solid #D4AF37 !important;
-  border-radius:50% !important;
+.whatsapp-premium:hover{
+    transform:translateY(-3px);
 
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-
-  color:#D4AF37 !important;
-  font-size:26px !important;
-  line-height:1 !important;
+    box-shadow:
+        0 0 12px rgba(212,175,55,.9),
+        0 0 25px rgba(212,175,55,.7),
+        0 0 55px rgba(212,175,55,.5);
 }
 
-.fp-wa-text{
-  display:flex !important;
-  flex-direction:column !important;
-  line-height:1.15 !important;
+.wa-icon{
+    width:82px;
+    height:82px;
+
+    border:3px solid #d4af37;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d4af37;
+
+    flex-shrink:0;
 }
 
-.fp-wa-text small{
-  color:#fff !important;
-  font-size:14px !important;
+.wa-icon i{
+    font-size:48px;
 }
 
-.fp-wa-text b{
-  color:#D4AF37 !important;
-  font-size:18px !important;
+.wa-content{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
 }
 
+.wa-content span{
+    color:#fff;
+    font-size:22px;
+    font-weight:400;
+}
+
+.wa-content strong{
+    color:#d4af37;
+    font-size:34px;
+    font-weight:700;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+    .whatsapp-premium{
+        right:12px;
+        bottom:12px;
+
+        gap:10px;
+
+        padding:10px 16px 10px 10px;
+    }
+
+    .wa-icon{
+        width:55px;
+        height:55px;
+    }
+
+    .wa-icon i{
+        font-size:30px;
+    }
+
+    .wa-content span{
+        font-size:14px;
+    }
+
+    .wa-content strong{
+        font-size:22px;
+    }
+}
   /* Footer */
 
 .site-footer{
