@@ -675,7 +675,8 @@ p { font-weight: 400; }
 }
 
 .fleet-wa-safe:active{
-    transform: scale(0.96);
+    transform: scale(0.75);
+  transform-origin:bottom right;
 }
 
 .fleet-wa-safe{
@@ -693,11 +694,6 @@ p { font-weight: 400; }
             0 0 15px rgba(212,175,55,.8),
             0 0 35px rgba(212,175,55,.5);
     }
-  
-  .fleet-wa-safe{
-    transform:scale(0.75);
-    transform-origin:bottom right;
-}
 }
 
   /* Footer */
