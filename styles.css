@@ -617,27 +617,21 @@ p { font-weight: 400; }
 
 /* WhatsApp */
 
-.fleet-whatsapp{
+.whatsapp-float{
     position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#000;
-    color:#D4AF37;
-    border:2px solid #D4AF37;
-    padding:12px 22px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:700;
-    letter-spacing:0.5px;
-    box-shadow:0 4px 15px rgba(212,175,55,0.3);
-    z-index:9999;
-    transition:all .3s ease;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:99999;
+    box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
-.fleet-whatsapp:hover{
-    background:#D4AF37;
-    color:#000;
-}
   /* Footer */
 
 .site-footer{
