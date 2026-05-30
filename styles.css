@@ -666,6 +666,35 @@ p { font-weight: 400; }
   font-size:18px !important;
 }
 
+.fleet-wa-safe:hover{
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:
+        0 0 15px rgba(212,175,55,1),
+        0 0 30px rgba(212,175,55,.8),
+        0 0 60px rgba(212,175,55,.5);
+}
+
+.fleet-wa-safe:active{
+    transform: scale(0.96);
+}
+
+.fleet-wa-safe{
+    animation: goldGlow 2.5s infinite alternate;
+}
+
+@keyframes goldGlow{
+    from{
+        box-shadow:
+            0 0 8px rgba(212,175,55,.4),
+            0 0 15px rgba(212,175,55,.2);
+    }
+    to{
+        box-shadow:
+            0 0 15px rgba(212,175,55,.8),
+            0 0 35px rgba(212,175,55,.5);
+    }
+}
+
   /* Footer */
 
 .site-footer{
