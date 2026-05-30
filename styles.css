@@ -618,80 +618,54 @@ p { font-weight: 400; }
 /* WhatsApp */
 
 #whatsapp-help{
+<style>
+#whatsapp-help{
   position:fixed !important;
-  right:20px !important;
-  bottom:22px !important;
+  right:16px !important;
+  bottom:20px !important;
   z-index:999999 !important;
   display:flex !important;
   align-items:center !important;
-  gap:14px !important;
+  gap:12px !important;
   background:#050505 !important;
   border:3px solid #d9a441 !important;
   border-radius:999px !important;
-  padding:12px 22px 12px 14px !important;
+  padding:10px 18px 10px 10px !important;
   text-decoration:none !important;
-  box-shadow:0 0 18px rgba(217,164,65,.9),0 0 45px rgba(217,164,65,.45) !important;
-  transition:.3s ease !important;
+  box-shadow:0 0 20px rgba(217,164,65,.9),0 0 55px rgba(217,164,65,.55) !important;
 }
 
 #whatsapp-help:hover{
-  transform:translateY(-4px) scale(1.04) !important;
-  box-shadow:0 0 28px rgba(217,164,65,1),0 0 70px rgba(217,164,65,.7) !important;
+  transform:scale(1.05) translateY(-4px) !important;
 }
 
 #whatsapp-help .wa-circle{
-  width:58px !important;
-  height:58px !important;
+  width:48px !important;
+  height:48px !important;
   border:3px solid #d9a441 !important;
   border-radius:50% !important;
   display:flex !important;
   align-items:center !important;
   justify-content:center !important;
   color:#d9a441 !important;
-  font-size:34px !important;
-  font-weight:bold !important;
-  box-shadow:0 0 14px rgba(217,164,65,.8) !important;
+  font-size:28px !important;
+  box-shadow:0 0 15px rgba(217,164,65,.9) !important;
 }
 
 #whatsapp-help em{
   display:block !important;
   color:#fff !important;
   font-style:normal !important;
-  font-size:19px !important;
-  line-height:1.1 !important;
+  font-size:15px !important;
 }
 
 #whatsapp-help b{
   display:block !important;
   color:#d9a441 !important;
-  font-size:22px !important;
-  line-height:1.1 !important;
-  margin-top:4px !important;
+  font-size:18px !important;
   text-shadow:0 0 8px rgba(217,164,65,.8) !important;
 }
-
-@media(max-width:600px){
-  #whatsapp-help{
-    right:12px !important;
-    bottom:18px !important;
-    padding:9px 15px 9px 10px !important;
-    gap:10px !important;
-  }
-
-  #whatsapp-help .wa-circle{
-    width:45px !important;
-    height:45px !important;
-    font-size:27px !important;
-  }
-
-  #whatsapp-help em{
-    font-size:15px !important;
-  }
-
-  #whatsapp-help b{
-    font-size:17px !important;
-  }
-}
+</style>
   /* Footer */
 
 .site-footer{
