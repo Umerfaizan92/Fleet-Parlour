@@ -651,6 +651,22 @@ p { font-weight: 400; }
   font-size:12px !important;
   line-height:1.1 !important;
 }
+
+.fp-fixed-wa-icon{
+  width:34px !important;
+  height:34px !important;
+  border:2px solid #d4af37 !important;
+  border-radius:50% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  color:#d4af37 !important;
+}
+
+.fp-fixed-wa-icon i{
+  font-size:18px !important;
+  color:#d4af37 !important;
+}
       
   /* Footer */
 
