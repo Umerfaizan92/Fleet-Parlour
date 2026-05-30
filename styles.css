@@ -237,6 +237,61 @@ p { font-weight: 400; }
     box-shadow: 0 0 12px rgba(212,176,106,0.45), 
                 0 0 36px rgba(212,176,106,0.25);
 }
+
+/* Previous Polishing Work */
+
+.previous-work-section {
+  background: #050505;
+}
+
+.work-gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+}
+
+.work-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.work-gallery::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 10px;
+}
+
+.work-gallery::-webkit-scrollbar-thumb {
+  background: #c9a14a;
+  border-radius: 10px;
+}
+
+.work-item {
+  flex: 0 0 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(201, 161, 74, 0.25);
+}
+
+.work-item img,
+.work-item video {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .work-item {
+    flex: 0 0 280px;
+  }
+
+  .work-item img,
+  .work-item video {
+    height: 430px;
+  }
+}
   /* Before/After */
 
 .before-after{
