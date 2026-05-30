@@ -743,47 +743,105 @@ p { font-weight: 400; }
 .wa-content{
     display:flex;
     flex-direction:column;
-    line-height:1.1;
+.wa-premium-btn{
+    position:fixed;
+    right:20px;
+    bottom:25px;
+    z-index:999999;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    background:#000000;
+    border:4px solid #E0B13F;
+
+    border-radius:80px;
+
+    padding:16px 28px 16px 16px;
+
+    text-decoration:none;
+
+    /* Glow */
+    box-shadow:
+        0 0 10px rgba(224,177,63,.9),
+        0 0 25px rgba(224,177,63,.6),
+        0 0 50px rgba(224,177,63,.35);
+
+    transition:all .35s ease;
 }
 
-.wa-content span{
-    color:#fff;
+.wa-premium-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 15px rgba(224,177,63,1),
+        0 0 35px rgba(224,177,63,.8),
+        0 0 70px rgba(224,177,63,.55);
+}
+
+.wa-premium-icon{
+    width:88px;
+    height:88px;
+
+    border:4px solid #E0B13F;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#E0B13F;
+
+    flex-shrink:0;
+}
+
+.wa-premium-icon i{
+    font-size:54px;
+}
+
+.wa-premium-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.05;
+}
+
+.wa-premium-text span{
+    color:#ffffff;
     font-size:22px;
     font-weight:400;
 }
 
-.wa-content strong{
-    color:#d4af37;
+.wa-premium-text strong{
+    color:#E0B13F;
     font-size:34px;
     font-weight:700;
 }
 
-/* MOBILE */
-@media (max-width:768px){
+/* Mobile */
+@media(max-width:768px){
 
-    .whatsapp-premium{
+    .wa-premium-btn{
         right:12px;
         bottom:12px;
-
         gap:10px;
-
-        padding:10px 16px 10px 10px;
+        padding:10px 18px 10px 10px;
     }
 
-    .wa-icon{
-        width:55px;
-        height:55px;
+    .wa-premium-icon{
+        width:56px;
+        height:56px;
     }
 
-    .wa-icon i{
-        font-size:30px;
+    .wa-premium-icon i{
+        font-size:32px;
     }
 
-    .wa-content span{
+    .wa-premium-text span{
         font-size:14px;
     }
 
-    .wa-content strong{
+    .wa-premium-text strong{
         font-size:22px;
     }
 }
