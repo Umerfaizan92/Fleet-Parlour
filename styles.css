@@ -578,6 +578,33 @@ li {
   opacity: 1;
 }
 
+/* SERVICES GALLERY - OUR SERVICES SECTION FRAME */
+
+.services-section .container {
+  border: var(--gold-border);
+  border-radius: var(--radius-xl);
+  padding: 45px 35px;
+  box-shadow: var(--gold-shadow);
+  transition: all .35s ease;
+}
+
+.services-section .container:hover {
+  border-color: var(--gold);
+  box-shadow: var(--gold-shadow-hover);
+}
+
+.services-section .services-card {
+  border: var(--gold-border) !important;
+  box-shadow: var(--gold-shadow) !important;
+  transition: all .35s ease !important;
+}
+
+.services-section .services-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--gold) !important;
+  box-shadow: var(--gold-shadow-hover) !important;
+}
+
 
 /* =========================================================
    11. About Page
