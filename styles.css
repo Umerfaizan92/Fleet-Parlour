@@ -1426,3 +1426,153 @@ li {
     height: 60px;
   }
 }
+
+/* SERVICES GALLERY - OUR SERVICES SECTION FRAME */
+
+.services-section .container {
+  border: var(--gold-border);
+  border-radius: var(--radius-xl);
+  padding: 45px 35px;
+  box-shadow: var(--gold-shadow);
+  transition: all .35s ease;
+}
+
+.services-section .container:hover {
+  border-color: var(--gold);
+  box-shadow: var(--gold-shadow-hover);
+}
+
+.services-section .services-card {
+  border: var(--gold-border) !important;
+  box-shadow: var(--gold-shadow) !important;
+  transition: all .35s ease !important;
+}
+
+.services-section .services-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--gold) !important;
+  box-shadow: var(--gold-shadow-hover) !important;
+}
+
+/* =====================================================
+   HOME PAGE FINAL FRAME FIX
+   Why Choose Fleet Parlour + Our Services
+===================================================== */
+
+/* WHY CHOOSE FLEET PARLOUR - each card */
+body .feature-card {
+  background: #0f0f0f !important;
+  border: 1px solid rgba(212,176,106,.38) !important;
+  border-radius: 18px !important;
+
+  box-shadow:
+    0 0 25px rgba(0,0,0,.75),
+    0 0 10px rgba(212,176,106,.22) !important;
+
+  transition: all .35s ease !important;
+}
+
+body .feature-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: #d4b06a !important;
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,.85),
+    0 0 18px rgba(212,176,106,.50),
+    0 0 38px rgba(212,176,106,.22) !important;
+}
+
+/* OUR SERVICES - each card */
+body #services .service-card {
+  background: #0f0f0f !important;
+  border: 1px solid rgba(212,176,106,.38) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+
+  box-shadow:
+    0 0 25px rgba(0,0,0,.75),
+    0 0 10px rgba(212,176,106,.22) !important;
+
+  transition: all .35s ease !important;
+}
+
+body #services .service-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: #d4b06a !important;
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,.85),
+    0 0 18px rgba(212,176,106,.50),
+    0 0 38px rgba(212,176,106,.22) !important;
+}
+
+body #services .service-card:hover .service-img {
+  transform: scale(1.06) !important;
+}
+
+/* HOME PAGE SECTION FRAME FIX */
+
+.fp-home-frame .container {
+  border: 1px solid rgba(212,176,106,.35) !important;
+  border-radius: 22px !important;
+  padding: 45px 35px !important;
+  box-shadow:
+    0 0 25px rgba(0,0,0,.75),
+    0 0 10px rgba(212,176,106,.18) !important;
+  transition: all .35s ease !important;
+}
+
+.fp-home-frame .container:hover {
+  border-color: var(--gold) !important;
+  box-shadow:
+    0 0 30px rgba(0,0,0,.85),
+    0 0 18px rgba(212,176,106,.45),
+    0 0 38px rgba(212,176,106,.20) !important;
+}
+
+.fp-home-frame .feature-card,
+.fp-home-frame .service-card {
+  border: 1px solid rgba(212,176,106,.35) !important;
+  box-shadow:
+    0 0 20px rgba(0,0,0,.70),
+    0 0 8px rgba(212,176,106,.14) !important;
+}
+
+.fp-home-frame .feature-card:hover,
+.fp-home-frame .service-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--gold) !important;
+  box-shadow:
+    0 0 30px rgba(0,0,0,.85),
+    0 0 18px rgba(212,176,106,.45),
+    0 0 38px rgba(212,176,106,.20) !important;
+}
+
+/* PREVIOUS POLISHING WORK FRAME */
+
+.previous-work-frame{
+  border:1px solid rgba(212,176,106,.35);
+  border-radius:22px;
+  padding:35px;
+  transition:all .35s ease;
+
+  box-shadow:
+    0 0 25px rgba(0,0,0,.75),
+    0 0 10px rgba(212,176,106,.18);
+}
+
+.previous-work-frame:hover{
+  border-color:var(--gold);
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,.85),
+    0 0 18px rgba(212,176,106,.45),
+    0 0 38px rgba(212,176,106,.20);
+}
+
+.work-gallery{
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
