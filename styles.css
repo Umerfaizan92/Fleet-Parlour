@@ -1584,69 +1584,13 @@ body #services .service-card:hover .service-img {
   background: transparent !important;
 }
 
-/* FORCE NAVBAR LOGO FRAME */
-
-.fp-logo-frame {
-  padding: 10px 14px !important;
-  border: 1px solid rgba(212,176,106,.55) !important;
-  border-radius: 22px !important;
-  background: #000 !important;
-
-  box-shadow:
-    0 0 15px rgba(212,176,106,.35),
-    0 0 30px rgba(212,176,106,.15) !important;
-
-  transition: all .35s ease !important;
-}
-
-.fp-logo-frame:hover {
-  border-color: #f0d18a !important;
-
-  box-shadow:
-    0 0 22px rgba(212,176,106,.75),
-    0 0 45px rgba(212,176,106,.30) !important;
-
-  transform: translateY(-2px) !important;
-}
-
-.fp-logo-frame .logo {
-  height: 70px !important;
-  width: auto !important;
-  margin: 0 !important;
-  display: block !important;
-}
-
-/* NAVBAR LOGO FRAME */
-
-.fp-logo-frame{
-    padding:10px !important;
-    border:2px solid #d4b06a !important;
-    border-radius:20px !important;
-
-    box-shadow:
-      0 0 15px rgba(212,176,106,.50),
-      0 0 35px rgba(212,176,106,.25);
-
-    transition:all .35s ease !important;
-}
-
-.fp-logo-frame:hover{
-    border-color:#f0d18a !important;
-
-    box-shadow:
-      0 0 25px rgba(212,176,106,.85),
-      0 0 50px rgba(212,176,106,.35);
-
-    transform:scale(1.05);
-}
-
 /* ===================================
-   ROUND NAVBAR LOGO FRAME
+   FLEET PARLOUR CIRCLE LOGO FRAME
 =================================== */
 
 .fp-logo-frame{
-    width:90px;
-    height:90px;
+    width:110px;
+    height:110px;
 
     display:flex !important;
     align-items:center !important;
@@ -1654,14 +1598,14 @@ body #services .service-card:hover .service-img {
 
     padding:0 !important;
 
-    border:2px solid rgba(212,176,106,.75) !important;
+    border:2px solid #d4b06a !important;
     border-radius:50% !important;
 
     background:#000 !important;
 
     box-shadow:
-      0 0 15px rgba(212,176,106,.45),
-      0 0 35px rgba(212,176,106,.20);
+        0 0 18px rgba(212,176,106,.55),
+        0 0 40px rgba(212,176,106,.25);
 
     transition:all .35s ease !important;
 }
@@ -1670,16 +1614,29 @@ body #services .service-card:hover .service-img {
     border-color:#f0d18a !important;
 
     box-shadow:
-      0 0 25px rgba(212,176,106,.85),
-      0 0 50px rgba(212,176,106,.35);
+        0 0 28px rgba(212,176,106,.90),
+        0 0 60px rgba(212,176,106,.40);
 
-    transform:scale(1.08);
+    transform:scale(1.06);
 }
 
 .fp-logo-frame .logo{
-    width:72px !important;
-    height:72px !important;
+    width:80px !important;
+    height:auto !important;
     object-fit:contain !important;
     margin:0 !important;
     display:block !important;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .fp-logo-frame{
+        width:90px;
+        height:90px;
+    }
+
+    .fp-logo-frame .logo{
+        width:65px !important;
+    }
 }
