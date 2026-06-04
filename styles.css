@@ -1831,77 +1831,72 @@ body #services .service-card:hover .service-img {
     width:80px !important;
     height:80px !important;
 
-    min-width:80px !important;
-    min-height:80px !important;
+/* LOGO + MENU SAME CIRCLE */
 
-    padding:0 !important;
-    margin:0 !important;
+.fp-logo-frame,
+.fp-menu-frame {
+  width: 82px !important;
+  height: 82px !important;
+  min-width: 82px !important;
+  min-height: 82px !important;
 
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-    background:#000 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 
-    border:2px solid #d4b06a !important;
-    border-radius:50% !important;
+  background: #000 !important;
 
-    box-shadow:
-        0 0 12px rgba(212,176,106,.45),
-        0 0 28px rgba(212,176,106,.18) !important;
+  border: 2px solid #f0c36a !important;
+  border-radius: 50% !important;
 
-    transition:all .35s ease !important;
+  box-shadow:
+    0 0 12px rgba(240,195,106,.65),
+    0 0 30px rgba(240,195,106,.28) !important;
+
+  transition: all .35s ease !important;
 }
 
 .fp-logo-frame:hover,
-.navbar-toggler:hover{
+.fp-menu-frame:hover {
+  border-color: #f0d18a !important;
 
-    border-color:#f0d18a !important;
+  box-shadow:
+    0 0 20px rgba(240,209,138,.90),
+    0 0 45px rgba(240,195,106,.40) !important;
 
-    box-shadow:
-        0 0 20px rgba(240,209,138,.75),
-        0 0 45px rgba(212,176,106,.30) !important;
-
-    transform:scale(1.05);
+  transform: scale(1.05);
 }
 
-/* LOGO */
-
-.fp-logo-frame .logo{
-    width:55px !important;
-    height:55px !important;
-    object-fit:contain !important;
-    display:block !important;
-    margin:0 !important;
+.fp-logo-frame .logo {
+  width: 56px !important;
+  height: 56px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  display: block !important;
 }
 
-/* REMOVE BOOTSTRAP ICON SIZE */
-
-.navbar-toggler-icon{
-    width:26px !important;
-    height:26px !important;
-
-    filter:
-      brightness(1.35)
-      drop-shadow(0 0 6px rgba(212,176,106,.65));
+.fp-menu-frame .navbar-toggler-icon {
+  width: 30px !important;
+  height: 30px !important;
+  filter:
+    brightness(1.5)
+    drop-shadow(0 0 7px rgba(240,195,106,.75)) !important;
 }
 
-/* MOBILE */
+@media (max-width: 768px) {
+  .fp-logo-frame,
+  .fp-menu-frame {
+    width: 76px !important;
+    height: 76px !important;
+    min-width: 76px !important;
+    min-height: 76px !important;
+  }
 
-@media (max-width:768px){
-
-    .fp-logo-frame,
-    .navbar-toggler{
-
-        width:72px !important;
-        height:72px !important;
-
-        min-width:72px !important;
-        min-height:72px !important;
-    }
-
-    .fp-logo-frame .logo{
-        width:50px !important;
-        height:50px !important;
-    }
+  .fp-logo-frame .logo {
+    width: 52px !important;
+    height: 52px !important;
+  }
 }
