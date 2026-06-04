@@ -1577,6 +1577,13 @@ body #services .service-card:hover .service-img {
   background: transparent !important;
 
 
+.work-gallery{
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
 /* ===================================
    FLEET PARLOUR ROUND LOGO FRAME
 =================================== */
@@ -1589,27 +1596,22 @@ body #services .service-card:hover .service-img {
 }
 
 .navbar .navbar-brand .logo {
-  height: 70px !important;
-  width: 70px !important;
+  height: 78px !important;
+  width: 78px !important;
   object-fit: contain;
-
   padding: 8px;
-
-  border: 1px solid rgba(212,176,106,.35);
+  border: 1px solid rgba(212,176,106,.45) !important;
   border-radius: 50% !important;
-
   box-shadow:
-    0 0 10px rgba(212,176,106,.15);
-
+    0 0 12px rgba(212,176,106,.30),
+    0 0 24px rgba(212,176,106,.12) !important;
   transition: all .35s ease !important;
 }
 
 .navbar .navbar-brand .logo:hover {
-  border-color: #d4b06a;
-
+  border-color: #d4b06a !important;
   box-shadow:
-    0 0 15px rgba(212,176,106,.40),
-    0 0 30px rgba(212,176,106,.20);
-
+    0 0 18px rgba(212,176,106,.60),
+    0 0 35px rgba(212,176,106,.28) !important;
   transform: scale(1.08);
 }
