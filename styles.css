@@ -1943,58 +1943,21 @@ body #services .service-card:hover .service-img {
 .fp-logo-frame .logo {
   width: 68px !important;
   height: 68px !important;
-  max-width: 68px !important;
-  max-height: 68px !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* ===================================
+   FINAL FIX - LOGO + MENU SAME CIRCLE
+=================================== */
+
+.navbar {
+  padding: 8px 18px !important;
 }
 
-/* Menu icon */
-.fp-menu-frame .navbar-toggler-icon {
-  width: 34px !important;
-  height: 34px !important;
-  background-size: 34px 34px !important;
-
-  filter:
-    brightness(1.45)
-    sepia(1)
-    saturate(1.7)
-    hue-rotate(350deg)
-    drop-shadow(0 0 8px rgba(245,182,66,.90)) !important;
-}
-
-/* Hover same for both */
-.fp-logo-frame:hover,
-.fp-menu-frame:hover {
-  border-color: #ffd36f !important;
-
-  box-shadow:
-    0 0 18px rgba(255,211,111,1),
-    0 0 40px rgba(245,182,66,.85),
-    0 0 70px rgba(245,182,66,.45) !important;
-
-  transform: scale(1.04) !important;
-}
-
-/* Remove Bootstrap default button style */
-.fp-menu-frame,
-.fp-menu-frame:focus,
-.fp-menu-frame:active,
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: none !important;
-  box-shadow:
-    0 0 12px rgba(245,182,66,.95),
-    0 0 30px rgba(245,182,66,.60),
-    0 0 58px rgba(245,182,66,.32) !important;
-}
-
-   /* FORCE LOGO + MENU SAME SIZE */
-body .navbar a.fp-logo-frame,
-body .navbar button.fp-menu-frame {
+.navbar .navbar-brand,
+.navbar .navbar-toggler {
   box-sizing: border-box !important;
+}
+
+.navbar a.fp-logo-frame,
+.navbar button.fp-menu-frame {
   width: 86px !important;
   height: 86px !important;
   min-width: 86px !important;
@@ -2015,30 +1978,38 @@ body .navbar button.fp-menu-frame {
 
   box-shadow:
     0 0 14px rgba(245,182,66,.95),
-    0 0 32px rgba(245,182,66,.65),
-    0 0 60px rgba(245,182,66,.35) !important;
+    0 0 34px rgba(245,182,66,.60),
+    0 0 65px rgba(245,182,66,.35) !important;
 
   overflow: hidden !important;
 }
 
-/* FORCE LOGO IMAGE SMALLER */
-body .navbar a.fp-logo-frame img.logo {
-  width: 64px !important;
-  height: 64px !important;
-  max-width: 64px !important;
-  max-height: 64px !important;
+.navbar a.fp-logo-frame img.logo {
+  width: 66px !important;
+  height: 66px !important;
+  max-width: 66px !important;
+  max-height: 66px !important;
   object-fit: contain !important;
 }
 
-/* FORCE MENU ICON SAME CENTER */
-body .navbar button.fp-menu-frame .navbar-toggler-icon {
+.navbar button.fp-menu-frame .navbar-toggler-icon {
   width: 34px !important;
   height: 34px !important;
   background-size: 34px 34px !important;
+  filter: brightness(1.6) drop-shadow(0 0 8px rgba(245,182,66,.9)) !important;
 }
 
-/* REMOVE BOOTSTRAP EXTRA EFFECT */
-body .navbar button.fp-menu-frame:focus,
-body .navbar button.fp-menu-frame:active {
+.navbar a.fp-logo-frame:hover,
+.navbar button.fp-menu-frame:hover {
+  transform: scale(1.04) !important;
+  border-color: #ffd36f !important;
+}
+
+.navbar button.fp-menu-frame:focus,
+.navbar button.fp-menu-frame:active {
   outline: none !important;
+  box-shadow:
+    0 0 14px rgba(245,182,66,.95),
+    0 0 34px rgba(245,182,66,.60),
+    0 0 65px rgba(245,182,66,.35) !important;
 }
