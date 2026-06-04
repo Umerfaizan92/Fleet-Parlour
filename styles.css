@@ -1990,3 +1990,55 @@ body #services .service-card:hover .service-img {
     0 0 30px rgba(245,182,66,.60),
     0 0 58px rgba(245,182,66,.32) !important;
 }
+
+   /* FORCE LOGO + MENU SAME SIZE */
+body .navbar a.fp-logo-frame,
+body .navbar button.fp-menu-frame {
+  box-sizing: border-box !important;
+  width: 86px !important;
+  height: 86px !important;
+  min-width: 86px !important;
+  max-width: 86px !important;
+  min-height: 86px !important;
+  max-height: 86px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: #000 !important;
+  border: 3px solid #f5b642 !important;
+  border-radius: 50% !important;
+
+  box-shadow:
+    0 0 14px rgba(245,182,66,.95),
+    0 0 32px rgba(245,182,66,.65),
+    0 0 60px rgba(245,182,66,.35) !important;
+
+  overflow: hidden !important;
+}
+
+/* FORCE LOGO IMAGE SMALLER */
+body .navbar a.fp-logo-frame img.logo {
+  width: 64px !important;
+  height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+  object-fit: contain !important;
+}
+
+/* FORCE MENU ICON SAME CENTER */
+body .navbar button.fp-menu-frame .navbar-toggler-icon {
+  width: 34px !important;
+  height: 34px !important;
+  background-size: 34px 34px !important;
+}
+
+/* REMOVE BOOTSTRAP EXTRA EFFECT */
+body .navbar button.fp-menu-frame:focus,
+body .navbar button.fp-menu-frame:active {
+  outline: none !important;
+}
