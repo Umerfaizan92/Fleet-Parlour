@@ -1141,22 +1141,42 @@ li {
   box-shadow: var(--gold-shadow-hover);
 }
 
+/* FOOTER LOGO MATCH NAVBAR */
+
 .fp-footer-logo-wrap {
   width: 135px;
   height: 135px;
   border-radius: 50%;
-  border: 1px solid rgba(212, 176, 106, .35);
+
+  border: 2px solid #e0b65f;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: 22px;
-  box-shadow: 0 0 18px rgba(212, 176, 106, .20);
+
+  box-shadow:
+    0 0 10px rgba(224,182,95,.55),
+    0 0 30px rgba(224,182,95,.30),
+    0 0 65px rgba(224,182,95,.12);
+
   transition: all .35s ease;
 }
 
 .fp-footer-brand-card:hover .fp-footer-logo-wrap {
-  border-color: var(--gold);
-  box-shadow: 0 0 20px rgba(212, 176, 106, .55), 0 0 38px rgba(212, 176, 106, .22);
+  border-color: #e7c67d;
+
+  box-shadow:
+    0 0 14px rgba(231,198,125,.70),
+    0 0 38px rgba(224,182,95,.38),
+    0 0 75px rgba(224,182,95,.18);
+}
+
+.fp-footer-logo-wrap img {
+  width: 105px;
+  height: auto;
+  object-fit: contain;
 }
 
 .fp-footer-logo-wrap img {
