@@ -1903,6 +1903,21 @@ body #services .service-card:hover .service-img {
   min-width: 82px !important;
   min-height: 82px !important;
 
+/* ===================================
+   FINAL NAVBAR LOGO + MENU MATCH
+=================================== */
+
+.navbar .logo {
+  height: auto !important;
+}
+
+.fp-logo-frame,
+.fp-menu-frame {
+  width: 86px !important;
+  height: 86px !important;
+  min-width: 86px !important;
+  min-height: 86px !important;
+
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1910,66 +1925,68 @@ body #services .service-card:hover .service-img {
   padding: 0 !important;
   margin: 0 !important;
 
-  background: #050505 !important;
+  background: #000 !important;
 
   border: 3px solid #f5b642 !important;
   border-radius: 50% !important;
 
   box-shadow:
-    0 0 10px rgba(245,182,66,.95),
-    0 0 24px rgba(245,182,66,.70),
-    0 0 48px rgba(245,182,66,.35) !important;
+    0 0 12px rgba(245,182,66,.95),
+    0 0 30px rgba(245,182,66,.60),
+    0 0 58px rgba(245,182,66,.32) !important;
 
   overflow: hidden !important;
   transition: all .35s ease !important;
 }
 
-/* Logo image inside circle */
+/* Logo inside circle */
 .fp-logo-frame .logo {
   width: 68px !important;
   height: 68px !important;
+  max-width: 68px !important;
+  max-height: 68px !important;
   object-fit: contain !important;
   display: block !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Menu icon lines */
-.navbar-toggler-icon,
+/* Menu icon */
 .fp-menu-frame .navbar-toggler-icon {
   width: 34px !important;
   height: 34px !important;
-
   background-size: 34px 34px !important;
 
   filter:
-    brightness(1.35)
+    brightness(1.45)
     sepia(1)
-    saturate(1.6)
+    saturate(1.7)
     hue-rotate(350deg)
-    drop-shadow(0 0 7px rgba(245,182,66,.85)) !important;
+    drop-shadow(0 0 8px rgba(245,182,66,.90)) !important;
 }
 
-/* Hover same effect */
+/* Hover same for both */
 .fp-logo-frame:hover,
-.fp-menu-frame:hover,
-.navbar-toggler:hover {
+.fp-menu-frame:hover {
   border-color: #ffd36f !important;
 
   box-shadow:
-    0 0 16px rgba(255,211,111,1),
-    0 0 34px rgba(245,182,66,.85),
-    0 0 58px rgba(245,182,66,.45) !important;
+    0 0 18px rgba(255,211,111,1),
+    0 0 40px rgba(245,182,66,.85),
+    0 0 70px rgba(245,182,66,.45) !important;
 
   transform: scale(1.04) !important;
 }
 
-/* Remove Bootstrap focus box */
+/* Remove Bootstrap default button style */
+.fp-menu-frame,
+.fp-menu-frame:focus,
+.fp-menu-frame:active,
 .navbar-toggler:focus,
 .navbar-toggler:active {
-  box-shadow:
-    0 0 10px rgba(245,182,66,.95),
-    0 0 24px rgba(245,182,66,.70),
-    0 0 48px rgba(245,182,66,.35) !important;
   outline: none !important;
+  box-shadow:
+    0 0 12px rgba(245,182,66,.95),
+    0 0 30px rgba(245,182,66,.60),
+    0 0 58px rgba(245,182,66,.32) !important;
 }
