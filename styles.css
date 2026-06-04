@@ -1140,36 +1140,45 @@ li {
   border-color: var(--gold);
   box-shadow: var(--gold-shadow-hover);
 }
+/* FOOTER LOGO EXACTLY LIKE NAVBAR */
 
 .fp-footer-logo-wrap {
-  width: 135px;
-  height: 135px;
-  border-radius: 50%;
-  border: 1px solid rgba(212, 176, 106, .35);
+  width: 120px;
+  height: 120px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 22px;
-  box-shadow: 0 0 18px rgba(212, 176, 106, .20);
+
+  background: #000;
+
+  border: 1.5px solid rgba(212,176,106,.55);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 6px rgba(212,176,106,.25),
+    0 0 16px rgba(212,176,106,.12),
+    0 0 28px rgba(212,176,106,.06);
+
   transition: all .35s ease;
 }
 
-.fp-footer-brand-card:hover .fp-footer-logo-wrap {
-  border-color: var(--gold);
-  box-shadow: 0 0 20px rgba(212, 176, 106, .55), 0 0 38px rgba(212, 176, 106, .22);
-}
-
 .fp-footer-logo-wrap img {
-  width: 105px;
-  height: auto;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
 }
 
-.fp-footer-brand-card p,
-.fp-footer-box p {
-  color: #d8d8d8;
-  line-height: 1.6;
-  margin-bottom: 10px;
+.fp-footer-brand-card:hover .fp-footer-logo-wrap {
+  border-color: #d4b06a;
+
+  box-shadow:
+    0 0 10px rgba(212,176,106,.45),
+    0 0 22px rgba(212,176,106,.18),
+    0 0 40px rgba(212,176,106,.08);
 }
+
 
 .fp-footer-brand-card span {
   color: var(--gold);
