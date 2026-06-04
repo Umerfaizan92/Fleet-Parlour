@@ -1575,7 +1575,7 @@ body #services .service-card:hover .service-img {
   box-shadow: none !important;
   padding: 0 !important;
   background: transparent !important;
-
+}
 
 .work-gallery{
   border: none !important;
@@ -1614,4 +1614,28 @@ body #services .service-card:hover .service-img {
   width: auto !important;
   margin: 0 !important;
   display: block !important;
+}
+
+/* NAVBAR LOGO FRAME */
+
+.fp-logo-frame{
+    padding:10px !important;
+    border:2px solid #d4b06a !important;
+    border-radius:20px !important;
+
+    box-shadow:
+      0 0 15px rgba(212,176,106,.50),
+      0 0 35px rgba(212,176,106,.25);
+
+    transition:all .35s ease !important;
+}
+
+.fp-logo-frame:hover{
+    border-color:#f0d18a !important;
+
+    box-shadow:
+      0 0 25px rgba(212,176,106,.85),
+      0 0 50px rgba(212,176,106,.35);
+
+    transform:scale(1.05);
 }
