@@ -1702,3 +1702,41 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
   color: #ffffff !important;
   border-color: var(--gold) !important;
 }
+
+/* HOME PAGE MENU CLICK FIX */
+
+.home-page .navbar,
+body .navbar,
+nav.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 99999 !important;
+}
+
+.home-page .navbar .container,
+body .navbar .container {
+  position: relative !important;
+  z-index: 100000 !important;
+}
+
+.home-page button.navbar-toggler.fp-menu-frame,
+body button.navbar-toggler.fp-menu-frame {
+  position: relative !important;
+  z-index: 100001 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.home-page .hero-section,
+.home-page .hero-section *,
+.hero-section,
+.hero-section * {
+  z-index: auto;
+}
+
+.hero-section::before,
+.hero-section::after,
+.hero-overlay,
+.hero-bg {
+  pointer-events: none !important;
+}
