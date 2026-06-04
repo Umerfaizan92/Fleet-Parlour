@@ -1702,25 +1702,3 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
   color: #ffffff !important;
   border-color: var(--gold) !important;
 }
-
-/* FIX MENU BUTTON CLICK */
-
-button.navbar-toggler.fp-menu-frame {
-  cursor: pointer !important;
-  pointer-events: auto !important;
-  z-index: 9999 !important;
-
-  border: 1.5px solid rgba(212,176,106,.55) !important;
-  background: #000 !important;
-}
-
-button.navbar-toggler.fp-menu-frame .fp-menu-lines,
-button.navbar-toggler.fp-menu-frame .fp-menu-lines span {
-  pointer-events: none !important;
-}
-
-/* Keep button clickable */
-button.navbar-toggler.fp-menu-frame::before,
-button.navbar-toggler.fp-menu-frame::after {
-  pointer-events: none !important;
-}
