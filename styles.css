@@ -1757,68 +1757,85 @@ body #services .service-card:hover .service-img {
 
     padding:0 !important;
 
+/* ===================================
+   NAVBAR LOGO & MENU MATCHING CIRCLES
+=================================== */
+
+.fp-logo-frame,
+.navbar-toggler{
+
+    width:75px !important;
+    height:75px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    padding:0 !important;
     background:#000 !important;
 
     border:2px solid #d4b06a !important;
     border-radius:50% !important;
 
     box-shadow:
-        0 0 18px rgba(212,176,106,.45),
-        0 0 40px rgba(212,176,106,.18) !important;
+        0 0 10px rgba(212,176,106,.45),
+        0 0 25px rgba(212,176,106,.18) !important;
 
     transition:all .35s ease !important;
 }
 
+.fp-logo-frame:hover,
 .navbar-toggler:hover{
+
     border-color:#f0d18a !important;
 
     box-shadow:
-        0 0 25px rgba(212,176,106,.75),
-        0 0 55px rgba(212,176,106,.30) !important;
+        0 0 18px rgba(240,209,138,.75),
+        0 0 40px rgba(212,176,106,.30) !important;
 
     transform:scale(1.05);
 }
 
+.fp-logo-frame .logo{
+    width:52px !important;
+    height:auto !important;
+    object-fit:contain !important;
+    display:block !important;
+    margin:0 !important;
+}
+
+/* Menu Icon Glow */
+
 .navbar-toggler-icon{
-    width:32px !important;
-    height:32px !important;
+
+    width:28px !important;
+    height:28px !important;
 
     filter:
-        brightness(1.4)
-        drop-shadow(0 0 8px rgba(212,176,106,.75));
+        brightness(1.3)
+        drop-shadow(0 0 6px rgba(212,176,106,.60));
 }
 
 .navbar-toggler:hover .navbar-toggler-icon{
+
     filter:
-        brightness(1.8)
-        drop-shadow(0 0 10px rgba(240,209,138,.95))
+        brightness(1.6)
+        drop-shadow(0 0 10px rgba(240,209,138,.90))
         drop-shadow(0 0 18px rgba(212,176,106,.45));
 }
 
-
-/* ===================================
-   MOBILE
-=================================== */
+/* Mobile */
 
 @media (max-width:768px){
 
-    .fp-logo-frame{
-        width:75px !important;
-        height:75px !important;
+    .fp-logo-frame,
+    .navbar-toggler{
+        width:70px !important;
+        height:70px !important;
     }
 
     .fp-logo-frame .logo{
-        width:52px !important;
-    }
-
-    .navbar-toggler{
-        width:75px !important;
-        height:75px !important;
-    }
-
-    .navbar-toggler-icon{
-        width:28px !important;
-        height:28px !important;
+        width:48px !important;
     }
 
 }
