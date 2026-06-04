@@ -1585,33 +1585,38 @@ body #services .service-card:hover .service-img {
 }
 
 /* ===================================
-   FLEET PARLOUR ROUND LOGO FRAME
+   FLEET PARLOUR NAVBAR LOGO
 =================================== */
 
-.navbar .navbar-brand {
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
+.navbar-brand{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    padding:10px !important;
+
+    border:1px solid rgba(212,176,106,.40) !important;
+    border-radius:20px !important;
+
+    box-shadow:
+        0 0 12px rgba(212,176,106,.20);
+
+    transition:all .35s ease !important;
 }
 
-.navbar .navbar-brand .logo {
-  height: 78px !important;
-  width: 78px !important;
-  object-fit: contain;
-  padding: 8px;
-  border: 1px solid rgba(212,176,106,.45) !important;
-  border-radius: 50% !important;
-  box-shadow:
-    0 0 12px rgba(212,176,106,.30),
-    0 0 24px rgba(212,176,106,.12) !important;
-  transition: all .35s ease !important;
+.navbar-brand:hover{
+    border-color:#d4b06a !important;
+
+    box-shadow:
+        0 0 20px rgba(212,176,106,.60),
+        0 0 40px rgba(212,176,106,.25);
+
+    transform:translateY(-2px);
 }
 
-.navbar .navbar-brand .logo:hover {
-  border-color: #d4b06a !important;
-  box-shadow:
-    0 0 18px rgba(212,176,106,.60),
-    0 0 35px rgba(212,176,106,.28) !important;
-  transform: scale(1.08);
+.navbar-brand .logo{
+    height:70px !important;
+    width:auto !important;
+    margin:0 !important;
+    display:block !important;
 }
