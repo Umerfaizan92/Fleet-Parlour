@@ -1583,20 +1583,24 @@ body #services .service-card:hover .service-img {
   padding: 0 !important;
   background: transparent !important;
 }
-/* FINAL CSS ONLY FIX - SMALLER, THINNER, SOFTER GLOW */
+
+/* ===================================
+   FINAL CLEAN NAVBAR LOGO + MENU
+   Small size, thin frame, premium glow
+=================================== */
 
 .navbar .logo {
   height: auto !important;
 }
 
-.navbar-brand.fp-logo-frame,
-button.navbar-toggler.fp-menu-frame {
-  width: 78px !important;
-  height: 78px !important;
-  min-width: 78px !important;
-  min-height: 78px !important;
-  max-width: 78px !important;
-  max-height: 78px !important;
+html body nav.navbar .container a.navbar-brand.fp-logo-frame,
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame {
+  width: 74px !important;
+  height: 74px !important;
+  min-width: 74px !important;
+  min-height: 74px !important;
+  max-width: 74px !important;
+  max-height: 74px !important;
 
   display: flex !important;
   align-items: center !important;
@@ -1610,100 +1614,77 @@ button.navbar-toggler.fp-menu-frame {
   border-radius: 50% !important;
 
   box-shadow:
-    0 0 7px rgba(240,182,80,.55),
-    0 0 18px rgba(240,182,80,.22) !important;
+    0 0 8px rgba(240,182,80,.65),
+    0 0 20px rgba(240,182,80,.28) !important;
 
   overflow: hidden !important;
   transition: all .35s ease !important;
 }
 
-.navbar-brand.fp-logo-frame img.logo {
-  width: 58px !important;
-  height: 58px !important;
-  max-width: 58px !important;
-  max-height: 58px !important;
+/* Logo */
+html body nav.navbar .container a.navbar-brand.fp-logo-frame img.logo {
+  width: 54px !important;
+  height: 54px !important;
+  max-width: 54px !important;
+  max-height: 54px !important;
   object-fit: contain !important;
   display: block !important;
 }
 
-button.navbar-toggler.fp-menu-frame {
-  border-radius: 50% !important;
+/* Menu button */
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame {
   appearance: none !important;
   -webkit-appearance: none !important;
 }
 
-button.navbar-toggler.fp-menu-frame .fp-menu-lines {
-  width: 28px !important;
-  height: 22px !important;
+/* Menu lines */
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines {
+  width: 26px !important;
+  height: 20px !important;
 
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
 }
 
-button.navbar-toggler.fp-menu-frame .fp-menu-lines span {
-  width: 28px !important;
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines span {
+  width: 26px !important;
   height: 3px !important;
 
   background: #d4b06a !important;
   border-radius: 20px !important;
 
   box-shadow:
-    0 0 4px rgba(240,182,80,.45) !important;
+    0 0 5px rgba(240,182,80,.65),
+    0 0 10px rgba(240,182,80,.25) !important;
 }
 
-.navbar-brand.fp-logo-frame:hover,
-button.navbar-toggler.fp-menu-frame:hover {
+/* Hover glow */
+html body nav.navbar .container a.navbar-brand.fp-logo-frame:hover,
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame:hover {
   border-color: #ffd27a !important;
 
   box-shadow:
-    0 0 10px rgba(255,210,122,.60),
-    0 0 24px rgba(240,182,80,.25) !important;
+    0 0 14px rgba(255,210,122,.85),
+    0 0 30px rgba(240,182,80,.40),
+    0 0 50px rgba(240,182,80,.18) !important;
 
-  transform: scale(1.03) !important;
+  transform: scale(1.04) !important;
 }
 
-button.navbar-toggler.fp-menu-frame:focus,
-button.navbar-toggler.fp-menu-frame:active {
+/* Menu lines hover */
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame:hover .fp-menu-lines span {
+  box-shadow:
+    0 0 8px rgba(255,210,122,.90),
+    0 0 16px rgba(240,182,80,.40) !important;
+}
+
+/* Focus */
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame:focus,
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
   outline: none !important;
-  box-shadow:
-    0 0 7px rgba(240,182,80,.55),
-    0 0 18px rgba(240,182,80,.22) !important;
-}
-
-/* FORCE SMALLER NAVBAR CIRCLES */
-
-html body nav.navbar .container a.navbar-brand.fp-logo-frame,
-html body nav.navbar .container button.navbar-toggler.fp-menu-frame {
-  width: 74px !important;
-  height: 74px !important;
-  min-width: 74px !important;
-  min-height: 74px !important;
-  max-width: 74px !important;
-  max-height: 74px !important;
-
-  border: 2px solid #f0b650 !important;
-  border-radius: 50% !important;
 
   box-shadow:
-    0 0 5px rgba(240,182,80,.45),
-    0 0 12px rgba(240,182,80,.18) !important;
-}
-
-html body nav.navbar .container a.navbar-brand.fp-logo-frame img.logo {
-  width: 54px !important;
-  height: 54px !important;
-  max-width: 54px !important;
-  max-height: 54px !important;
-}
-
-html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines {
-  width: 26px !important;
-  height: 20px !important;
-}
-
-html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines span {
-  width: 26px !important;
-  height: 3px !important;
-  box-shadow: 0 0 3px rgba(240,182,80,.35) !important;
+    0 0 8px rgba(240,182,80,.65),
+    0 0 20px rgba(240,182,80,.28) !important;
 }
