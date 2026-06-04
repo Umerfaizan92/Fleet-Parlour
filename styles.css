@@ -1585,42 +1585,44 @@ body #services .service-card:hover .service-img {
 }
 
 /* ===================================
-   PREMIUM CIRCLE LOGO FRAME
+   FLEET PARLOUR CIRCLE LOGO FRAME
+   Matches Website Gold Hover Style
 =================================== */
 
 .fp-logo-frame{
-    width:140px;
-    height:140px;
+    width:100px;
+    height:100px;
 
     display:flex !important;
     align-items:center !important;
     justify-content:center !important;
 
     padding:0 !important;
-    background:transparent !important;
+    background:#050505 !important;
 
-    border:3px solid #d4b06a !important;
+    border:1px solid rgba(212,176,106,.35) !important;
     border-radius:50% !important;
 
     box-shadow:
-        0 0 18px rgba(212,176,106,.55),
-        0 0 40px rgba(212,176,106,.25);
+        0 0 25px rgba(0,0,0,.75),
+        0 0 10px rgba(212,176,106,.18);
 
     transition:all .35s ease !important;
 }
 
 .fp-logo-frame:hover{
-    border-color:#f0d18a !important;
+    border-color:var(--gold) !important;
 
     box-shadow:
-        0 0 30px rgba(212,176,106,.95),
-        0 0 60px rgba(212,176,106,.40);
+        0 0 30px rgba(0,0,0,.85),
+        0 0 18px rgba(212,176,106,.45),
+        0 0 38px rgba(212,176,106,.20);
 
-    transform:scale(1.05);
+    transform:translateY(-3px);
 }
 
 .fp-logo-frame .logo{
-    width:90px !important;
+    width:72px !important;
     height:auto !important;
     object-fit:contain !important;
     margin:0 !important;
@@ -1632,12 +1634,12 @@ body #services .service-card:hover .service-img {
 @media (max-width:768px){
 
     .fp-logo-frame{
-        width:120px;
-        height:120px;
+        width:90px;
+        height:90px;
     }
 
     .fp-logo-frame .logo{
-        width:78px !important;
+        width:65px !important;
     }
 
 }
