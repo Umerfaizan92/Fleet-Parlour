@@ -1584,39 +1584,34 @@ body #services .service-card:hover .service-img {
   background: transparent !important;
 }
 
-/* ===================================
-   FLEET PARLOUR NAVBAR LOGO
-=================================== */
+/* FORCE NAVBAR LOGO FRAME */
 
-.navbar-brand{
-    display:inline-flex !important;
-    align-items:center !important;
-    justify-content:center !important;
+.fp-logo-frame {
+  padding: 10px 14px !important;
+  border: 1px solid rgba(212,176,106,.55) !important;
+  border-radius: 22px !important;
+  background: #000 !important;
 
-    padding:10px !important;
+  box-shadow:
+    0 0 15px rgba(212,176,106,.35),
+    0 0 30px rgba(212,176,106,.15) !important;
 
-    border:1px solid rgba(212,176,106,.40) !important;
-    border-radius:20px !important;
-
-    box-shadow:
-        0 0 12px rgba(212,176,106,.20);
-
-    transition:all .35s ease !important;
+  transition: all .35s ease !important;
 }
 
-.navbar-brand:hover{
-    border-color:#d4b06a !important;
+.fp-logo-frame:hover {
+  border-color: #f0d18a !important;
 
-    box-shadow:
-        0 0 20px rgba(212,176,106,.60),
-        0 0 40px rgba(212,176,106,.25);
+  box-shadow:
+    0 0 22px rgba(212,176,106,.75),
+    0 0 45px rgba(212,176,106,.30) !important;
 
-    transform:translateY(-2px);
+  transform: translateY(-2px) !important;
 }
 
-.navbar-brand .logo{
-    height:70px !important;
-    width:auto !important;
-    margin:0 !important;
-    display:block !important;
+.fp-logo-frame .logo {
+  height: 70px !important;
+  width: auto !important;
+  margin: 0 !important;
+  display: block !important;
 }
