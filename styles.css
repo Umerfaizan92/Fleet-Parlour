@@ -1882,21 +1882,67 @@ body #services .service-card:hover .service-img {
   width: 30px !important;
   height: 30px !important;
   filter:
-    brightness(1.5)
-    drop-shadow(0 0 7px rgba(240,195,106,.75)) !important;
+/* ===================================
+   FINAL MATCHING NAVBAR CIRCLES
+=================================== */
+
+.fp-logo-frame,
+.fp-menu-frame {
+  width: 76px !important;
+  height: 76px !important;
+  min-width: 76px !important;
+  min-height: 76px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: #000 !important;
+
+  border: 2px solid #d4b06a !important;
+  border-radius: 50% !important;
+
+  box-shadow:
+    0 0 14px rgba(212,176,106,.50),
+    0 0 32px rgba(212,176,106,.22) !important;
+
+  transition: all .35s ease !important;
 }
 
-@media (max-width: 768px) {
-  .fp-logo-frame,
-  .fp-menu-frame {
-    width: 76px !important;
-    height: 76px !important;
-    min-width: 76px !important;
-    min-height: 76px !important;
-  }
+.fp-logo-frame:hover,
+.fp-menu-frame:hover {
+  border-color: #f0d18a !important;
 
-  .fp-logo-frame .logo {
-    width: 52px !important;
-    height: 52px !important;
-  }
+  box-shadow:
+    0 0 22px rgba(240,209,138,.85),
+    0 0 48px rgba(212,176,106,.35) !important;
+
+  transform: scale(1.05) !important;
+}
+
+.fp-logo-frame .logo {
+  width: 52px !important;
+  height: 52px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.fp-menu-frame .navbar-toggler-icon {
+  width: 30px !important;
+  height: 30px !important;
+
+  filter:
+    brightness(1.45)
+    drop-shadow(0 0 7px rgba(212,176,106,.70)) !important;
+}
+
+/* Remove Bootstrap focus box */
+.navbar-toggler:focus {
+  box-shadow: none !important;
+  outline: none !important;
 }
