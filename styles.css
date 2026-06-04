@@ -1619,9 +1619,9 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame {
   border-radius: 50% !important;
 
   box-shadow:
-    0 0 10px rgba(240,182,80,.80),
-    0 0 28px rgba(240,182,80,.45),
-    0 0 55px rgba(240,182,80,.22) !important;
+    0 0 6px rgba(212,176,106,.25),
+    0 0 16px rgba(212,176,106,.12),
+    0 0 25px rgba(212,176,106,.08) !important;
 
   overflow: hidden !important;
   transition: all .35s ease !important;
@@ -1677,7 +1677,7 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame:focus,
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
   outline: none !important;
   box-shadow:
-    0 0 10px rgba(240,182,80,.80),
-    0 0 28px rgba(240,182,80,.45),
-    0 0 55px rgba(240,182,80,.22) !important;
+   0 0 6px rgba(212,176,106,.25),
+    0 0 16px rgba(212,176,106,.12),
+    0 0 25px rgba(212,176,106,.08) !important;
 }
