@@ -1690,3 +1690,15 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
     0 0 16px rgba(212,176,106,.12),
     0 0 25px rgba(212,176,106,.08) !important;
 }
+
+.btn-dark-outline {
+  background: #000 !important;
+  border: 1px solid rgba(255,255,255,.35) !important;
+  color: #ffffff !important;
+}
+
+.btn-dark-outline:hover {
+  background: #000 !important;
+  color: #ffffff !important;
+  border-color: var(--gold) !important;
+}
