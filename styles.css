@@ -1699,94 +1699,126 @@ body #services .service-card:hover .service-img {
   align-items: center !important;
   justify-content: center !important;
 
-  padding: 0 !important;
-  background: #000 !important;
-  border-radius: 50% !important;
+/* ===================================
+   FLEET PARLOUR NAVBAR LOGO
+=================================== */
 
-  box-shadow:
-    0 0 18px rgba(212,176,106,.45),
-    0 0 40px rgba(212,176,106,.18) !important;
+.fp-logo-frame{
+    width:85px !important;
+    height:85px !important;
 
-  transition: all .35s ease !important;
-}
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
 
-.fp-logo-frame::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid #d4b06a;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 3;
+    padding:0 !important;
+    background:#000 !important;
+
+    border:2px solid #d4b06a !important;
+    border-radius:50% !important;
+
+    box-shadow:
+        0 0 18px rgba(212,176,106,.45),
+        0 0 40px rgba(212,176,106,.18) !important;
+
+    transition:all .35s ease !important;
 }
 
 .fp-logo-frame:hover{
-  transform: scale(1.05) !important;
-  box-shadow:
-    0 0 25px rgba(212,176,106,.75),
-    0 0 55px rgba(212,176,106,.30) !important;
-}
+    border-color:#f0d18a !important;
 
-.fp-logo-frame:hover::after{
-  border-color: #f0d18a;
+    box-shadow:
+        0 0 25px rgba(212,176,106,.75),
+        0 0 55px rgba(212,176,106,.30) !important;
+
+    transform:scale(1.05);
 }
 
 .fp-logo-frame .logo{
-  width: 68px !important;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain !important;
-  margin: 0 !important;
-  display: block !important;
-  position: relative;
-  z-index: 2;
+    width:60px !important;
+    height:auto !important;
+    object-fit:contain !important;
+    display:block !important;
+    margin:0 !important;
 }
 
-/* MENU BUTTON MATCHING STYLE */
+
+/* ===================================
+   FLEET PARLOUR NAVBAR MENU BUTTON
+=================================== */
 
 .navbar-toggler{
-  width: 70px !important;
-  height: 70px !important;
-  border: 2px solid #d4b06a !important;
-  border-radius: 50% !important;
-  background: #000 !important;
+    width:85px !important;
+    height:85px !important;
 
-  box-shadow:
-    0 0 18px rgba(212,176,106,.35),
-    0 0 35px rgba(212,176,106,.15) !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
 
-  transition: all .35s ease !important;
+    padding:0 !important;
+
+    background:#000 !important;
+
+    border:2px solid #d4b06a !important;
+    border-radius:50% !important;
+
+    box-shadow:
+        0 0 18px rgba(212,176,106,.45),
+        0 0 40px rgba(212,176,106,.18) !important;
+
+    transition:all .35s ease !important;
 }
 
 .navbar-toggler:hover{
-  border-color: #f0d18a !important;
-  box-shadow:
-    0 0 25px rgba(212,176,106,.70),
-    0 0 50px rgba(212,176,106,.28) !important;
-  transform: scale(1.05) !important;
+    border-color:#f0d18a !important;
+
+    box-shadow:
+        0 0 25px rgba(212,176,106,.75),
+        0 0 55px rgba(212,176,106,.30) !important;
+
+    transform:scale(1.05);
 }
 
 .navbar-toggler-icon{
-  filter:
-    brightness(1.4)
-    drop-shadow(0 0 6px rgba(212,176,106,.65)) !important;
+    width:32px !important;
+    height:32px !important;
+
+    filter:
+        brightness(1.4)
+        drop-shadow(0 0 8px rgba(212,176,106,.75));
 }
 
-/* MOBILE */
+.navbar-toggler:hover .navbar-toggler-icon{
+    filter:
+        brightness(1.8)
+        drop-shadow(0 0 10px rgba(240,209,138,.95))
+        drop-shadow(0 0 18px rgba(212,176,106,.45));
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
 
 @media (max-width:768px){
 
-  .fp-logo-frame{
-    width: 85px !important;
-    height: 85px !important;
-  }
+    .fp-logo-frame{
+        width:75px !important;
+        height:75px !important;
+    }
 
-  .fp-logo-frame .logo{
-    width: 60px !important;
-  }
+    .fp-logo-frame .logo{
+        width:52px !important;
+    }
 
-  .navbar-toggler{
-    width: 60px !important;
-    height: 60px !important;
-  }
+    .navbar-toggler{
+        width:75px !important;
+        height:75px !important;
+    }
+
+    .navbar-toggler-icon{
+        width:28px !important;
+        height:28px !important;
+    }
+
 }
