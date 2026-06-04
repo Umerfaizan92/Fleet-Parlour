@@ -1639,3 +1639,47 @@ body #services .service-card:hover .service-img {
 
     transform:scale(1.05);
 }
+
+/* ===================================
+   ROUND NAVBAR LOGO FRAME
+=================================== */
+
+.fp-logo-frame{
+    width:90px;
+    height:90px;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    padding:0 !important;
+
+    border:2px solid rgba(212,176,106,.75) !important;
+    border-radius:50% !important;
+
+    background:#000 !important;
+
+    box-shadow:
+      0 0 15px rgba(212,176,106,.45),
+      0 0 35px rgba(212,176,106,.20);
+
+    transition:all .35s ease !important;
+}
+
+.fp-logo-frame:hover{
+    border-color:#f0d18a !important;
+
+    box-shadow:
+      0 0 25px rgba(212,176,106,.85),
+      0 0 50px rgba(212,176,106,.35);
+
+    transform:scale(1.08);
+}
+
+.fp-logo-frame .logo{
+    width:72px !important;
+    height:72px !important;
+    object-fit:contain !important;
+    margin:0 !important;
+    display:block !important;
+}
