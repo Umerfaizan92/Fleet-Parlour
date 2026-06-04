@@ -1670,3 +1670,40 @@ button.navbar-toggler.fp-menu-frame:active {
     0 0 7px rgba(240,182,80,.55),
     0 0 18px rgba(240,182,80,.22) !important;
 }
+
+/* FORCE SMALLER NAVBAR CIRCLES */
+
+html body nav.navbar .container a.navbar-brand.fp-logo-frame,
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame {
+  width: 74px !important;
+  height: 74px !important;
+  min-width: 74px !important;
+  min-height: 74px !important;
+  max-width: 74px !important;
+  max-height: 74px !important;
+
+  border: 2px solid #f0b650 !important;
+  border-radius: 50% !important;
+
+  box-shadow:
+    0 0 5px rgba(240,182,80,.45),
+    0 0 12px rgba(240,182,80,.18) !important;
+}
+
+html body nav.navbar .container a.navbar-brand.fp-logo-frame img.logo {
+  width: 54px !important;
+  height: 54px !important;
+  max-width: 54px !important;
+  max-height: 54px !important;
+}
+
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines {
+  width: 26px !important;
+  height: 20px !important;
+}
+
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines span {
+  width: 26px !important;
+  height: 3px !important;
+  box-shadow: 0 0 3px rgba(240,182,80,.35) !important;
+}
