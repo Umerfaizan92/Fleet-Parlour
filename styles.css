@@ -1585,506 +1585,103 @@ body #services .service-card:hover .service-img {
 }
 
 /* ===================================
-   NAVBAR LOGO + MENU GOLD GLOW
-   Screenshot-matched style
+   FLEET PARLOUR FINAL NAVBAR
 =================================== */
 
-.fp-logo-frame{
-    width:90px;
-    height:90px;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    padding:0 !important;
-    background:#000 !important;
-
-    border:3px solid #f2bd55 !important;
-    border-radius:50% !important;
-
-    box-shadow:
-        0 0 10px rgba(242,189,85,.75),
-        0 0 28px rgba(242,189,85,.40),
-        0 0 55px rgba(242,189,85,.18) !important;
-
-    transition:all .35s ease !important;
+/* Override old logo size */
+.navbar .logo{
+  height:auto !important;
 }
 
-.fp-logo-frame:hover{
-    border-color:#ffd27a !important;
-
-    box-shadow:
-        0 0 16px rgba(255,210,122,.95),
-        0 0 38px rgba(242,189,85,.60),
-        0 0 70px rgba(242,189,85,.30) !important;
-
-    transform:scale(1.05);
-}
-
-.fp-logo-frame .logo{
-    width:64px !important;
-    height:auto !important;
-    object-fit:contain !important;
-    margin:0 !important;
-    display:block !important;
-}
-
-/* MENU BUTTON MATCHING LOGO */
-
-.navbar-toggler{
-    width:70px !important;
-    height:70px !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    padding:0 !important;
-
-    border:2px solid #f2bd55 !important;
-    border-radius:18px !important;
-
-    background:#050505 !important;
-
-    box-shadow:
-        0 0 10px rgba(242,189,85,.55),
-        0 0 24px rgba(242,189,85,.25) !important;
-
-    transition:all .35s ease !important;
-}
-
-.navbar-toggler:hover{
-    border-color:#ffd27a !important;
-
-    box-shadow:
-        0 0 16px rgba(255,210,122,.90),
-        0 0 36px rgba(242,189,85,.45) !important;
-
-    transform:translateY(-3px);
-}
-
-.navbar-toggler-icon{
-    width:30px !important;
-    height:30px !important;
-
-    filter:
-        brightness(1.45)
-        sepia(1)
-        saturate(1.8)
-        hue-rotate(350deg)
-        drop-shadow(0 0 6px rgba(242,189,85,.70)) !important;
-}
-
-.navbar-toggler:hover .navbar-toggler-icon{
-    filter:
-        brightness(1.8)
-        sepia(1)
-        saturate(2.2)
-        hue-rotate(350deg)
-        drop-shadow(0 0 10px rgba(255,210,122,.95))
-        drop-shadow(0 0 18px rgba(242,189,85,.50)) !important;
-}
-
-/* ===================================
-   NAVBAR LOGO + MENU FINAL FIX
-=================================== */
-
-.fp-logo-frame{
-  position: relative;
-  width: 95px !important;
-  height: 95px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-/* ===================================
-   FLEET PARLOUR NAVBAR LOGO
-=================================== */
-
-.fp-logo-frame{
-    width:85px !important;
-    height:85px !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    padding:0 !important;
-    background:#000 !important;
-
-    border:2px solid #d4b06a !important;
-    border-radius:50% !important;
-
-    box-shadow:
-        0 0 18px rgba(212,176,106,.45),
-        0 0 40px rgba(212,176,106,.18) !important;
-
-    transition:all .35s ease !important;
-}
-
-.fp-logo-frame:hover{
-    border-color:#f0d18a !important;
-
-    box-shadow:
-        0 0 25px rgba(212,176,106,.75),
-        0 0 55px rgba(212,176,106,.30) !important;
-
-    transform:scale(1.05);
-}
-
-.fp-logo-frame .logo{
-    width:60px !important;
-    height:auto !important;
-    object-fit:contain !important;
-    display:block !important;
-    margin:0 !important;
-}
-
-
-/* ===================================
-   FLEET PARLOUR NAVBAR MENU BUTTON
-=================================== */
-
-.navbar-toggler{
-    width:85px !important;
-    height:85px !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    padding:0 !important;
-
-/* ===================================
-   NAVBAR LOGO & MENU MATCHING CIRCLES
-=================================== */
-
+/* Logo Circle + Menu Circle */
 .fp-logo-frame,
-.navbar-toggler{
+.fp-menu-frame{
+  width:92px !important;
+  height:92px !important;
 
-    width:75px !important;
-    height:75px !important;
+  min-width:92px !important;
+  min-height:92px !important;
 
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
 
-    padding:0 !important;
-    background:#000 !important;
+  padding:0 !important;
+  margin:0 !important;
 
-    border:2px solid #d4b06a !important;
-    border-radius:50% !important;
+  background:#000 !important;
 
-    box-shadow:
-        0 0 10px rgba(212,176,106,.45),
-        0 0 25px rgba(212,176,106,.18) !important;
-
-    transition:all .35s ease !important;
-}
-
-.fp-logo-frame:hover,
-.navbar-toggler:hover{
-
-    border-color:#f0d18a !important;
-
-    box-shadow:
-        0 0 18px rgba(240,209,138,.75),
-        0 0 40px rgba(212,176,106,.30) !important;
-
-    transform:scale(1.05);
-}
-
-.fp-logo-frame .logo{
-    width:52px !important;
-    height:auto !important;
-    object-fit:contain !important;
-    display:block !important;
-    margin:0 !important;
-}
-
-/* Menu Icon Glow */
-
-.navbar-toggler-icon{
-
-    width:28px !important;
-    height:28px !important;
-
-    filter:
-        brightness(1.3)
-        drop-shadow(0 0 6px rgba(212,176,106,.60));
-}
-
-.navbar-toggler:hover .navbar-toggler-icon{
-
-    filter:
-        brightness(1.6)
-        drop-shadow(0 0 10px rgba(240,209,138,.90))
-/* ===================================
-   PERFECT MATCHING NAVBAR CIRCLES
-=================================== */
-
-.fp-logo-frame,
-.navbar-toggler{
-
-    width:80px !important;
-    height:80px !important;
-
-/* LOGO + MENU SAME CIRCLE */
-
-.fp-logo-frame,
-.fp-menu-frame {
-  width: 82px !important;
-  height: 82px !important;
-  min-width: 82px !important;
-  min-height: 82px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-
-  background: #000 !important;
-
-  border: 2px solid #f0c36a !important;
-  border-radius: 50% !important;
-
-  box-shadow:
-    0 0 12px rgba(240,195,106,.65),
-    0 0 30px rgba(240,195,106,.28) !important;
-
-  transition: all .35s ease !important;
-}
-
-.fp-logo-frame:hover,
-.fp-menu-frame:hover {
-  border-color: #f0d18a !important;
-
-  box-shadow:
-    0 0 20px rgba(240,209,138,.90),
-    0 0 45px rgba(240,195,106,.40) !important;
-
-  transform: scale(1.05);
-}
-
-.fp-logo-frame .logo {
-  width: 56px !important;
-  height: 56px !important;
-  object-fit: contain !important;
-  margin: 0 !important;
-  display: block !important;
-}
-
-.fp-menu-frame .navbar-toggler-icon {
-  width: 30px !important;
-  height: 30px !important;
-  filter:
-/* ===================================
-   FINAL MATCHING NAVBAR CIRCLES
-=================================== */
-
-.fp-logo-frame,
-.fp-menu-frame {
-  width: 76px !important;
-  height: 76px !important;
-  min-width: 76px !important;
-/* ===================================
-   EXACT MATCHING NAVBAR CIRCLES
-=================================== */
-
-.fp-logo-frame,
-.fp-menu-frame,
-.navbar-toggler {
-  width: 82px !important;
-  height: 82px !important;
-  min-width: 82px !important;
-  min-height: 82px !important;
-
-/* ===================================
-   FINAL NAVBAR LOGO + MENU MATCH
-=================================== */
-
-.navbar .logo {
-  height: auto !important;
-}
-
-.fp-logo-frame,
-.fp-menu-frame {
-  width: 86px !important;
-  height: 86px !important;
-  min-width: 86px !important;
-  min-height: 86px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-
-  background: #000 !important;
-
-  border: 3px solid #f5b642 !important;
-  border-radius: 50% !important;
-
-  box-shadow:
-    0 0 12px rgba(245,182,66,.95),
-    0 0 30px rgba(245,182,66,.60),
-    0 0 58px rgba(245,182,66,.32) !important;
-
-  overflow: hidden !important;
-  transition: all .35s ease !important;
-}
-
-/* Logo inside circle */
-.fp-logo-frame .logo {
-  width: 68px !important;
-  height: 68px !important;
-/* ===================================
-   FINAL FIX - LOGO + MENU SAME CIRCLE
-=================================== */
-
-.navbar {
-  padding: 8px 18px !important;
-}
-
-.navbar .navbar-brand,
-.navbar .navbar-toggler {
-  box-sizing: border-box !important;
-}
-
-.navbar a.fp-logo-frame,
-.navbar button.fp-menu-frame {
-  width: 86px !important;
-  height: 86px !important;
-  min-width: 86px !important;
-  max-width: 86px !important;
-  min-height: 86px !important;
-  max-height: 86px !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  background: #000 !important;
-  border: 3px solid #f5b642 !important;
-  border-radius: 50% !important;
-
-  box-shadow:
-    0 0 14px rgba(245,182,66,.95),
-    0 0 34px rgba(245,182,66,.60),
-    0 0 65px rgba(245,182,66,.35) !important;
-
-  overflow: hidden !important;
-}
-
-.navbar a.fp-logo-frame img.logo {
-  width: 66px !important;
-  height: 66px !important;
-  max-width: 66px !important;
-  max-height: 66px !important;
-  object-fit: contain !important;
-}
-
-.navbar button.fp-menu-frame .navbar-toggler-icon {
-  width: 34px !important;
-  height: 34px !important;
-  background-size: 34px 34px !important;
-  filter: brightness(1.6) drop-shadow(0 0 8px rgba(245,182,66,.9)) !important;
-}
-
-.navbar a.fp-logo-frame:hover,
-.navbar button.fp-menu-frame:hover {
-  transform: scale(1.04) !important;
-  border-color: #ffd36f !important;
-}
-
-.navbar button.fp-menu-frame:focus,
-.navbar button.fp-menu-frame:active {
-  outline: none !important;
-  box-shadow:
-    0 0 14px rgba(245,182,66,.95),
-    0 0 34px rgba(245,182,66,.60),
-    0 0 65px rgba(245,182,66,.35) !important;
-}
-
-   .fp-logo-frame,
-.fp-menu-frame {
-  width: 92px !important;
-  height: 92px !important;
-  min-width: 92px !important;
-  min-height: 92px !important;
-  max-width: 92px !important;
-  max-height: 92px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-
-  background: #000 !important;
-  border: 4px solid #f5b642 !important;
-  border-radius: 50% !important;
+  border:4px solid #f5b642 !important;
+  border-radius:50% !important;
 
   box-shadow:
     0 0 16px rgba(245,182,66,.95),
     0 0 38px rgba(245,182,66,.60),
     0 0 70px rgba(245,182,66,.35) !important;
 
-  overflow: hidden !important;
+  overflow:hidden !important;
+  transition:all .35s ease !important;
 }
 
-.fp-logo-frame .logo {
-  width: 70px !important;
-  height: 70px !important;
-  max-width: 70px !important;
-  max-height: 70px !important;
-  object-fit: contain !important;
+/* Logo */
+.fp-logo-frame .logo{
+  width:70px !important;
+  height:70px !important;
+  max-width:70px !important;
+  max-height:70px !important;
+  object-fit:contain !important;
+  display:block !important;
+  margin:0 !important;
 }
 
-.fp-menu-frame {
-  appearance: none !important;
-  -webkit-appearance: none !important;
+/* Menu Button */
+.fp-menu-frame{
+  appearance:none !important;
+  -webkit-appearance:none !important;
 }
 
-.fp-menu-frame::before,
-.fp-menu-frame::after {
-  display: none !important;
+/* Remove Bootstrap icon completely */
+.fp-menu-frame .navbar-toggler-icon{
+  display:none !important;
 }
 
-.fp-menu-lines {
-  width: 36px !important;
-  height: 28px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
+/* Custom Menu Lines */
+.fp-menu-lines{
+  width:36px !important;
+  height:28px !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:space-between !important;
 }
 
-.fp-menu-lines span {
-  width: 36px !important;
-  height: 4px !important;
-  background: #c9bd96 !important;
-  border-radius: 20px !important;
-  box-shadow: 0 0 8px rgba(245,182,66,.85) !important;
+.fp-menu-lines span{
+  width:36px !important;
+  height:4px !important;
+
+  background:#d4b06a !important;
+  border-radius:20px !important;
+
+  box-shadow:
+    0 0 8px rgba(245,182,66,.85),
+    0 0 18px rgba(245,182,66,.35) !important;
 }
 
-.fp-menu-frame .navbar-toggler-icon {
-  display: none !important;
+/* Hover */
+.fp-logo-frame:hover,
+.fp-menu-frame:hover{
+  border-color:#ffd36f !important;
+
+  box-shadow:
+    0 0 20px rgba(255,211,111,1),
+    0 0 45px rgba(245,182,66,.85),
+    0 0 80px rgba(245,182,66,.45) !important;
+
+  transform:scale(1.04) !important;
 }
 
+/* Focus */
 .fp-menu-frame:focus,
-.fp-menu-frame:active {
-  outline: none !important;
-  box-shadow:
-    0 0 16px rgba(245,182,66,.95),
-    0 0 38px rgba(245,182,66,.60),
-    0 0 70px rgba(245,182,66,.35) !important;
+.fp-menu-frame:active{
+  outline:none !important;
 }
