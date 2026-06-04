@@ -1585,114 +1585,128 @@ body #services .service-card:hover .service-img {
 }
 
 /* ===================================
-   FLEET PARLOUR CIRCLE LOGO FRAME
+   NAVBAR LOGO + MENU GOLD GLOW
+   Screenshot-matched style
 =================================== */
 
 .fp-logo-frame{
-    width:80px;
-    height:80px;
+    width:90px;
+    height:90px;
 
     display:flex !important;
     align-items:center !important;
     justify-content:center !important;
 
     padding:0 !important;
-    background:#050505 !important;
+    background:#000 !important;
 
-    border:1px solid rgba(212,176,106,.35) !important;
+    border:3px solid #f2bd55 !important;
     border-radius:50% !important;
 
     box-shadow:
-        0 0 20px rgba(0,0,0,.75),
-        0 0 8px rgba(212,176,106,.18);
+        0 0 10px rgba(242,189,85,.75),
+        0 0 28px rgba(242,189,85,.40),
+        0 0 55px rgba(242,189,85,.18) !important;
 
     transition:all .35s ease !important;
 }
 
 .fp-logo-frame:hover{
-    border-color:var(--gold) !important;
+    border-color:#ffd27a !important;
 
     box-shadow:
-        0 0 30px rgba(0,0,0,.85),
-        0 0 18px rgba(212,176,106,.45),
-        0 0 38px rgba(212,176,106,.20);
+        0 0 16px rgba(255,210,122,.95),
+        0 0 38px rgba(242,189,85,.60),
+        0 0 70px rgba(242,189,85,.30) !important;
 
-    transform:translateY(-3px);
+    transform:scale(1.05);
 }
 
 .fp-logo-frame .logo{
-    width:58px !important;
+    width:64px !important;
     height:auto !important;
     object-fit:contain !important;
     margin:0 !important;
     display:block !important;
 }
 
-/* ===================================
-   MOBILE MENU BUTTON MATCH LOGO
-=================================== */
+/* MENU BUTTON MATCHING LOGO */
 
 .navbar-toggler{
-    width:80px;
-    height:80px;
+    width:70px !important;
+    height:70px !important;
 
-    border:1px solid rgba(212,176,106,.35) !important;
-    border-radius:50% !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    padding:0 !important;
+
+    border:2px solid #f2bd55 !important;
+    border-radius:18px !important;
 
     background:#050505 !important;
 
     box-shadow:
-        0 0 20px rgba(0,0,0,.75),
-        0 0 8px rgba(212,176,106,.18);
+        0 0 10px rgba(242,189,85,.55),
+        0 0 24px rgba(242,189,85,.25) !important;
 
     transition:all .35s ease !important;
 }
 
 .navbar-toggler:hover{
-    border-color:var(--gold) !important;
+    border-color:#ffd27a !important;
 
     box-shadow:
-        0 0 30px rgba(0,0,0,.85),
-        0 0 18px rgba(212,176,106,.45),
-        0 0 38px rgba(212,176,106,.20);
+        0 0 16px rgba(255,210,122,.90),
+        0 0 36px rgba(242,189,85,.45) !important;
 
     transform:translateY(-3px);
 }
 
 .navbar-toggler-icon{
+    width:30px !important;
+    height:30px !important;
+
     filter:
-        brightness(1.2)
-        drop-shadow(0 0 6px rgba(212,176,106,.55));
+        brightness(1.45)
+        sepia(1)
+        saturate(1.8)
+        hue-rotate(350deg)
+        drop-shadow(0 0 6px rgba(242,189,85,.70)) !important;
 }
 
 .navbar-toggler:hover .navbar-toggler-icon{
     filter:
-        brightness(1.4)
-        drop-shadow(0 0 10px rgba(212,176,106,.85))
-        drop-shadow(0 0 18px rgba(212,176,106,.45));
+        brightness(1.8)
+        sepia(1)
+        saturate(2.2)
+        hue-rotate(350deg)
+        drop-shadow(0 0 10px rgba(255,210,122,.95))
+        drop-shadow(0 0 18px rgba(242,189,85,.50)) !important;
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width:768px){
 
     .fp-logo-frame{
-        width:70px;
-        height:70px;
+        width:82px;
+        height:82px;
     }
 
     .fp-logo-frame .logo{
-        width:50px !important;
+        width:58px !important;
     }
 
     .navbar-toggler{
-        width:70px;
-        height:70px;
-    }
-}
-
-    .fp-logo-frame .logo{
-        width:65px !important;
+        width:62px !important;
+        height:62px !important;
+        border-radius:16px !important;
     }
 
+    .navbar-toggler-icon{
+        width:28px !important;
+        height:28px !important;
+    }
 }
