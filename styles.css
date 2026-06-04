@@ -2013,3 +2013,78 @@ body #services .service-card:hover .service-img {
     0 0 34px rgba(245,182,66,.60),
     0 0 65px rgba(245,182,66,.35) !important;
 }
+
+   .fp-logo-frame,
+.fp-menu-frame {
+  width: 92px !important;
+  height: 92px !important;
+  min-width: 92px !important;
+  min-height: 92px !important;
+  max-width: 92px !important;
+  max-height: 92px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: #000 !important;
+  border: 4px solid #f5b642 !important;
+  border-radius: 50% !important;
+
+  box-shadow:
+    0 0 16px rgba(245,182,66,.95),
+    0 0 38px rgba(245,182,66,.60),
+    0 0 70px rgba(245,182,66,.35) !important;
+
+  overflow: hidden !important;
+}
+
+.fp-logo-frame .logo {
+  width: 70px !important;
+  height: 70px !important;
+  max-width: 70px !important;
+  max-height: 70px !important;
+  object-fit: contain !important;
+}
+
+.fp-menu-frame {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.fp-menu-frame::before,
+.fp-menu-frame::after {
+  display: none !important;
+}
+
+.fp-menu-lines {
+  width: 36px !important;
+  height: 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.fp-menu-lines span {
+  width: 36px !important;
+  height: 4px !important;
+  background: #c9bd96 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 0 8px rgba(245,182,66,.85) !important;
+}
+
+.fp-menu-frame .navbar-toggler-icon {
+  display: none !important;
+}
+
+.fp-menu-frame:focus,
+.fp-menu-frame:active {
+  outline: none !important;
+  box-shadow:
+    0 0 16px rgba(245,182,66,.95),
+    0 0 38px rgba(245,182,66,.60),
+    0 0 70px rgba(245,182,66,.35) !important;
+}
