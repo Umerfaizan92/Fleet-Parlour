@@ -1584,90 +1584,40 @@ body #services .service-card:hover .service-img {
   background: transparent !important;
 }
 
-/* ===================================
-   FINAL PREMIUM GOLD GLOW NAVBAR
-=================================== */
+/* FINAL PREMIUM NAVBAR - MATCH WEBSITE GOLD */
 
 html body nav.navbar .container a.navbar-brand.fp-logo-frame,
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame {
-  width: 74px !important;
-  height: 74px !important;
-  min-width: 74px !important;
-  min-height: 74px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-
-  background: #000 !important;
-  border: 2px solid #f0b650 !important;
-  border-radius: 50% !important;
+  border: 2px solid #d4b06a !important;
 
   box-shadow:
-    0 0 12px rgba(240,182,80,.85),
-    0 0 28px rgba(240,182,80,.45),
-    0 0 50px rgba(240,182,80,.18) !important;
-
-  overflow: hidden !important;
-  transition: all .35s ease !important;
+    0 0 10px rgba(212,176,106,.65),
+    0 0 24px rgba(212,176,106,.35),
+    0 0 45px rgba(212,176,106,.18) !important;
 }
 
-/* Logo */
-html body nav.navbar .container a.navbar-brand.fp-logo-frame img.logo {
-  width: 54px !important;
-  height: 54px !important;
-  object-fit: contain !important;
-}
+html body nav.navbar .container a.navbar-brand.fp-logo-frame:hover,
+html body nav.navbar .container button.navbar-toggler.fp-menu-frame:hover {
+  border-color: #f0d18a !important;
 
-/* Menu lines */
-html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines {
-  width: 26px !important;
-  height: 20px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
+  box-shadow:
+    0 0 16px rgba(240,209,138,.85),
+    0 0 36px rgba(212,176,106,.48),
+    0 0 65px rgba(212,176,106,.25) !important;
 }
 
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines span {
-  width: 26px !important;
-  height: 3px !important;
-
   background: #d4b06a !important;
-  border-radius: 20px !important;
 
   box-shadow:
-    0 0 6px rgba(240,182,80,.90),
-    0 0 14px rgba(240,182,80,.40) !important;
+    0 0 6px rgba(212,176,106,.75),
+    0 0 14px rgba(212,176,106,.35) !important;
 }
 
-/* PREMIUM HOVER */
-html body nav.navbar .container a.navbar-brand.fp-logo-frame:hover,
-html body nav.navbar .container button.navbar-toggler.fp-menu-frame:hover {
-
-  border-color: #ffd27a !important;
-
-  box-shadow:
-    0 0 18px rgba(255,210,122,1),
-    0 0 40px rgba(240,182,80,.65),
-    0 0 75px rgba(240,182,80,.30) !important;
-
-  transform: translateY(-2px) scale(1.08) !important;
-}
-
-/* Menu lines hover glow */
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame:hover .fp-menu-lines span {
+  background: #f0d18a !important;
 
   box-shadow:
-    0 0 10px rgba(255,210,122,1),
-    0 0 20px rgba(240,182,80,.60),
-    0 0 35px rgba(240,182,80,.25) !important;
-}
-
-/* Focus */
-html body nav.navbar .container button.navbar-toggler.fp-menu-frame:focus,
-html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
-  outline: none !important;
+    0 0 9px rgba(240,209,138,.90),
+    0 0 18px rgba(212,176,106,.45) !important;
 }
