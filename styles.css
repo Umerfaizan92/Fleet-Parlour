@@ -1584,65 +1584,42 @@ body #services .service-card:hover .service-img {
   background: transparent !important;
 }
 
-/* SOFTER PREMIUM GOLD */
+/* FINAL PREMIUM NAVBAR - MATCH WEBSITE GOLD */
 
 html body nav.navbar .container a.navbar-brand.fp-logo-frame,
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame {
-  border: 2px solid #c39b52 !important;
+  border: 2px solid #d4b06a !important;
 
   box-shadow:
-    0 0 8px rgba(195,155,82,.55),
-    0 0 20px rgba(195,155,82,.28),
-    0 0 40px rgba(195,155,82,.12) !important;
+    0 0 10px rgba(212,176,106,.65),
+    0 0 24px rgba(212,176,106,.35),
+    0 0 45px rgba(212,176,106,.18) !important;
 }
 
 html body nav.navbar .container a.navbar-brand.fp-logo-frame:hover,
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame:hover {
-  border-color: #ddb86d !important;
+  border-color: #f0d18a !important;
 
   box-shadow:
-    0 0 12px rgba(221,184,109,.75),
-    0 0 28px rgba(195,155,82,.38),
-    0 0 50px rgba(195,155,82,.18) !important;
+    0 0 16px rgba(240,209,138,.85),
+    0 0 36px rgba(212,176,106,.48),
+    0 0 65px rgba(212,176,106,.25) !important;
 }
 
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame .fp-menu-lines span {
-  background: #c39b52 !important;
+  background: #d4b06a !important;
 
   box-shadow:
-    0 0 5px rgba(195,155,82,.65),
-    0 0 10px rgba(195,155,82,.25) !important;
+    0 0 6px rgba(212,176,106,.75),
+    0 0 14px rgba(212,176,106,.35) !important;
 }
 
 html body nav.navbar .container button.navbar-toggler.fp-menu-frame:hover .fp-menu-lines span {
-  background: #ddb86d !important;
+  background: #f0d18a !important;
 
   box-shadow:
-    0 0 7px rgba(221,184,109,.85),
-    0 0 14px rgba(195,155,82,.35) !important;
+    0 0 9px rgba(240,209,138,.90),
+    0 0 18px rgba(212,176,106,.45) !important;
 }
-
-/* ===================================
-   NAVBAR LOGO + MENU GOLD GLOW
-   Screenshot-matched style
-=================================== */
-
-=========================
-   FLEET PARLOUR NAVBAR MENU BUTTON
-=================================== */
-
-.navbar-toggler{
-    width:85px !important;
-    height:85px !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    padding:0 !important;
-
-/* ===================================
-   NAVBAR LOGO & MENU MATCHING CIRCLES
-=================================== */
 
   
