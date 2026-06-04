@@ -1585,23 +1585,22 @@ body #services .service-card:hover .service-img {
 }
 
 /* ===================================
-   FLEET PARLOUR CIRCLE LOGO FRAME
+   PREMIUM CIRCLE LOGO FRAME
 =================================== */
 
 .fp-logo-frame{
-    width:110px;
-    height:110px;
+    width:140px;
+    height:140px;
 
     display:flex !important;
     align-items:center !important;
     justify-content:center !important;
 
     padding:0 !important;
+    background:transparent !important;
 
-    border:2px solid #d4b06a !important;
+    border:3px solid #d4b06a !important;
     border-radius:50% !important;
-
-    background:#000 !important;
 
     box-shadow:
         0 0 18px rgba(212,176,106,.55),
@@ -1614,14 +1613,14 @@ body #services .service-card:hover .service-img {
     border-color:#f0d18a !important;
 
     box-shadow:
-        0 0 28px rgba(212,176,106,.90),
+        0 0 30px rgba(212,176,106,.95),
         0 0 60px rgba(212,176,106,.40);
 
-    transform:scale(1.06);
+    transform:scale(1.05);
 }
 
 .fp-logo-frame .logo{
-    width:80px !important;
+    width:90px !important;
     height:auto !important;
     object-fit:contain !important;
     margin:0 !important;
@@ -1629,14 +1628,16 @@ body #services .service-card:hover .service-img {
 }
 
 /* Mobile */
+
 @media (max-width:768px){
 
     .fp-logo-frame{
-        width:90px;
-        height:90px;
+        width:120px;
+        height:120px;
     }
 
     .fp-logo-frame .logo{
-        width:65px !important;
+        width:78px !important;
     }
+
 }
