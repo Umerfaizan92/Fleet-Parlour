@@ -1575,21 +1575,34 @@ body #services .service-card:hover .service-img {
   box-shadow: none !important;
   padding: 0 !important;
   background: transparent !important;
-}
 
-/* PREMIUM LOGO FRAME */
 
-.navbar-brand {
-  padding: 8px 12px;
-  border: 1px solid rgba(212,176,106,.35);
-  border-radius: 16px;
-  transition: all .35s ease;
-}
+/* ===================================
+   FLEET PARLOUR LOGO FRAME
+=================================== */
 
-.navbar-brand:hover {
-  border-color: var(--gold);
+.navbar .navbar-brand {
+  padding: 8px !important;
+  border: 1px solid rgba(212,176,106,.35) !important;
+  border-radius: 18px !important;
+
   box-shadow:
-    0 0 12px rgba(212,176,106,.45),
-    0 0 25px rgba(212,176,106,.25);
+    0 0 10px rgba(212,176,106,.15);
+
+  transition: all .35s ease !important;
+}
+
+.navbar .navbar-brand:hover {
+  border-color: #d4b06a !important;
+
+  box-shadow:
+    0 0 15px rgba(212,176,106,.40),
+    0 0 30px rgba(212,176,106,.20);
+
   transform: translateY(-2px);
+}
+
+.navbar .navbar-brand img {
+  display: block;
+  margin: 0 !important;
 }
