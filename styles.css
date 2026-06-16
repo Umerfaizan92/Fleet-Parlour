@@ -513,6 +513,20 @@ li {
   }
 }
 
+/* Video carousel title link fix */
+.work-gallery.index-video-gallery .video-box{
+  text-decoration:none !important;
+}
+
+.work-gallery.index-video-gallery .video-box p{
+  color:var(--gold) !important;
+  text-decoration:none !important;
+}
+
+.work-gallery.index-video-gallery .video-box:hover p{
+  color:var(--gold-bright) !important;
+}
+
 
 
 
