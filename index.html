@@ -397,29 +397,17 @@ document.addEventListener("DOMContentLoaded", function () {
   gallery.scrollLeft = 0;
 
   let speed = 1;
-  let interval;
 
-  function startVideoAutoScroll() {
-    interval = setInterval(function () {
-      gallery.scrollLeft += speed;
+  setInterval(function () {
+    gallery.scrollLeft += speed;
 
-      if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 1) {
-        gallery.scrollLeft = 0;
-      }
-    }, 25);
-  }
-
-  function stopVideoAutoScroll() {
-    clearInterval(interval);
-  }
-
-  startVideoAutoScroll();
-
-  gallery.addEventListener("mouseenter", stopVideoAutoScroll);
-  gallery.addEventListener("mouseleave", startVideoAutoScroll);
-
-  gallery.addEventListener("touchstart", stopVideoAutoScroll, { passive: true });
-  gallery.addEventListener("touchend", startVideoAutoScroll, { passive: true });
+    if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2) {
+      gallery.scrollTo({
+        left: 0,
+        behavior: "smooth"
+      });
+    }
+  }, 25);
 });
 </script>
 
