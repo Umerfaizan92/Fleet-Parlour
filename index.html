@@ -394,19 +394,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!gallery) return;
 
+  let speed = 1;
+  let isResetting = false;
+
   gallery.scrollLeft = 0;
 
-  let speed = 1;
-
   setInterval(function () {
+
+    if (isResetting) return;
+
+    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
     gallery.scrollLeft += speed;
 
-    if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2) {
-      gallery.scrollTo({
-        left: 0,
-        behavior: "smooth"
-      });
+    if (gallery.scrollLeft >= maxScroll - 5) {
+      isResetting = true;
+
+      setTimeout(function () {
+        gallery.scrollLeft = 0;
+        isResetting = false;
+      }, 300);
     }
+
   }, 25);
 });
 </script>
