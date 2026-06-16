@@ -1952,3 +1952,28 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
         }
     }
 }
+
+.work-gallery.index-video-gallery{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    gap:25px;
+
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+
+    animation: fpVideoScroll 30s linear infinite;
+}
+
+.work-gallery.index-video-gallery:hover{
+    animation-play-state:paused;
+}
+
+@keyframes fpVideoScroll{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-60%);
+    }
+}
