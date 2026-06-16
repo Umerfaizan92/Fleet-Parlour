@@ -174,42 +174,32 @@
     </p>
   </div>
 
-<div class="work-gallery index-video-gallery video-auto-carousel">
+<div class="work-gallery index-video-gallery auto-video-row">
 
-  <div class="video-track">
+  <div class="video-box" onclick="openVideo('WchavwCFA6I')">
+    <p>Watch our latest mirror finish caravan polishing transformation.</p>
+    <img src="https://img.youtube.com/vi/WchavwCFA6I/maxresdefault.jpg" alt="Caravan polishing video">
+    <span class="play-btn">▶</span>
+  </div>
 
-    <div class="video-box">
-      <p>Watch our latest mirror finish caravan polishing transformation.</p>
-      <iframe src="https://www.youtube.com/embed/WchavwCFA6I" allowfullscreen></iframe>
-    </div>
+  <div class="video-box" onclick="openVideo('OmJZuICXvYM')">
+    <p>Watch our Kenworth T409SAR Full Truck Mirror Polish.</p>
+    <img src="https://img.youtube.com/vi/OmJZuICXvYM/maxresdefault.jpg" alt="Kenworth polishing video">
+    <span class="play-btn">▶</span>
+  </div>
 
-    <div class="video-box">
-      <p>Watch our Kenworth T409SAR Full Truck Mirror Polish.</p>
-      <iframe src="https://www.youtube.com/embed/OmJZuICXvYM" allowfullscreen></iframe>
-    </div>
+  <div class="video-box" onclick="openVideo('KbLD1kwUMQI')">
+    <p>Watch our Another Kenworth Brought Back to Life | Truck Mirror Polish.</p>
+    <img src="https://img.youtube.com/vi/KbLD1kwUMQI/maxresdefault.jpg" alt="Truck mirror polish video">
+    <span class="play-btn">▶</span>
+  </div>
 
-    <div class="video-box">
-      <p>Watch our Another Kenworth Brought Back to Life | Truck Mirror Polish.</p>
-      <iframe src="https://www.youtube.com/embed/KbLD1kwUMQI" allowfullscreen></iframe>
-    </div>
+</div>
 
-    <!-- Duplicate for smooth auto rotation -->
-
-    <div class="video-box">
-      <p>Watch our latest mirror finish caravan polishing transformation.</p>
-      <iframe src="https://www.youtube.com/embed/WchavwCFA6I" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-box">
-      <p>Watch our Kenworth T409SAR Full Truck Mirror Polish.</p>
-      <iframe src="https://www.youtube.com/embed/OmJZuICXvYM" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-box">
-      <p>Watch our Another Kenworth Brought Back to Life | Truck Mirror Polish.</p>
-      <iframe src="https://www.youtube.com/embed/KbLD1kwUMQI" allowfullscreen></iframe>
-    </div>
-
+<div id="videoPopup" class="video-popup" onclick="closeVideo()">
+  <div class="video-popup-content" onclick="event.stopPropagation()">
+    <span class="close-video" onclick="closeVideo()">×</span>
+    <iframe id="popupVideo" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -424,6 +414,18 @@
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
+ 
+    <script>
+function openVideo(videoId){
+    document.getElementById("videoPopup").style.display = "flex";
+    document.getElementById("popupVideo").src =
+        "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+}
+
+function closeVideo(){
+    document.getElementById("videoPopup").style.display = "none";
+    document.getElementById("popupVideo").src = "";
+}
+  </script>
   </body>
 </html>
