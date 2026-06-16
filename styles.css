@@ -449,54 +449,107 @@ li {
   max-width: 315px;
   display: block;
 }
-.index-video-gallery{
-    overflow:hidden;
-    width:100%;
-}
-
-.index-video-gallery{
+.auto-video-row{
     display:flex;
     gap:25px;
-    width:max-content;
-    animation: fpVideoMove 35s linear infinite;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding-bottom:15px;
+    animation: autoVideoScroll 35s linear infinite;
 }
 
-.index-video-gallery:hover{
+.auto-video-row:hover{
     animation-play-state:paused;
 }
 
-.index-video-gallery .video-box{
-    flex:0 0 315px;
+.auto-video-row::-webkit-scrollbar{
+    height:8px;
 }
 
-.index-video-gallery iframe{
+.auto-video-row::-webkit-scrollbar-thumb{
+    background:#d4b06a;
+    border-radius:20px;
+}
+
+.auto-video-row .video-box{
+    position:relative;
+    flex:0 0 315px;
+    cursor:pointer;
+}
+
+.auto-video-row .video-box img{
     width:315px;
     height:560px;
+    object-fit:cover;
+    border-radius:18px;
+    display:block;
+}
+
+.play-btn{
+    position:absolute;
+    top:55%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:60px;
+    color:white;
+    text-shadow:0 0 20px #000;
+}
+
+@keyframes autoVideoScroll{
+    0%{
+        transform:translateX(0);
+    }
+    50%{
+        transform:translateX(-35%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+
+.video-popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    z-index:99999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.video-popup-content{
+    position:relative;
+    width:90%;
+    max-width:900px;
+}
+
+.video-popup iframe{
+    width:100%;
+    height:80vh;
     border:0;
     border-radius:18px;
 }
 
-@keyframes fpVideoMove{
-    0%{
-        transform:translateX(100%);
-    }
-    100%{
-        transform:translateX(-100%);
-    }
+.close-video{
+    position:absolute;
+    top:-45px;
+    right:0;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
 }
 
 @media(max-width:768px){
-    .index-video-gallery .video-box{
+    .auto-video-row .video-box{
         flex:0 0 280px;
     }
 
-    .index-video-gallery iframe{
+    .auto-video-row .video-box img{
         width:280px;
         height:500px;
     }
 }
-
-
 
 /* =========================================================
    9. Services Gallery - Photo Carousel / Lightbox
