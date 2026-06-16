@@ -527,7 +527,15 @@ li {
   color:var(--gold-bright) !important;
 }
 
+.work-gallery.index-video-gallery{
+  scroll-behavior:auto !important;
+  animation:none !important;
+  transform:none !important;
+}
 
+.work-gallery.index-video-gallery .video-box p{
+    color:var(--text-muted) !important;
+}
 
 
 /* =========================================================
