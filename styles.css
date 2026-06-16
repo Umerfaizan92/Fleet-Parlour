@@ -470,85 +470,166 @@ li {
     background:#d4b06a;
     border-radius:20px;
 }
+/* =========================================================
+   8. Previous Polishing Work - Auto Video Carousel
+   ========================================================= */
 
-.auto-video-row .video-box{
-    position:relative;
-    flex:0 0 315px;
-    cursor:pointer;
+.previous-work-frame{
+  border:1px solid rgba(212,176,106,.35);
+  border-radius:22px;
+  padding:35px;
+  overflow:hidden;
+  transition:all .35s ease;
+  box-shadow:
+    0 0 25px rgba(0,0,0,.75),
+    0 0 10px rgba(212,176,106,.18);
 }
 
-.auto-video-row .video-box img{
-    width:315px;
-    height:560px;
-    object-fit:cover;
-    border-radius:18px;
-    display:block;
+.previous-work-frame:hover{
+  border-color:var(--gold);
+  box-shadow:
+    0 0 30px rgba(0,0,0,.85),
+    0 0 18px rgba(212,176,106,.45),
+    0 0 38px rgba(212,176,106,.20);
+}
+
+.work-gallery.index-video-gallery{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  gap:25px !important;
+
+  width:max-content !important;
+  max-width:none !important;
+
+  overflow:visible !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+
+  animation: fpVideoMoveLeft 35s linear infinite !important;
+}
+
+.work-gallery.index-video-gallery:hover{
+  animation-play-state:paused !important;
+}
+
+.work-gallery.index-video-gallery .video-box{
+  flex:0 0 315px !important;
+  width:315px !important;
+  min-width:315px !important;
+  max-width:315px !important;
+
+  position:relative;
+  cursor:pointer;
+
+  background:#0f0f0f;
+  border:1px solid rgba(212,176,106,.35) !important;
+  border-radius:18px;
+  padding:16px;
+
+  box-shadow:
+    0 0 25px rgba(0,0,0,.75),
+    0 0 10px rgba(212,176,106,.18) !important;
+}
+
+.work-gallery.index-video-gallery .video-box img{
+  width:100%;
+  height:560px;
+  object-fit:cover;
+  display:block;
+  border-radius:14px;
+}
+
+.work-gallery.index-video-gallery .video-box p{
+  color:#e8e8e8;
+  font-size:14px;
+  margin-bottom:12px;
 }
 
 .play-btn{
-    position:absolute;
-    top:55%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    font-size:60px;
-    color:white;
-    text-shadow:0 0 20px #000;
+  position:absolute;
+  top:55%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:58px;
+  color:#fff;
+  text-shadow:0 0 18px #000;
+  pointer-events:none;
 }
 
-@keyframes autoVideoScroll{
-    0%{
-        transform:translateX(0);
-    }
-    50%{
-        transform:translateX(-35%);
-    }
-    100%{
-        transform:translateX(0);
-    }
+/* Left only movement */
+@keyframes fpVideoMoveLeft{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-60%);
+  }
 }
+
+/* Full size video popup */
 
 .video-popup{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
-    z-index:99999;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:99999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
 
 .video-popup-content{
-    position:relative;
-    width:90%;
-    max-width:900px;
+  position:relative;
+  width:92%;
+  max-width:900px;
 }
 
 .video-popup iframe{
-    width:100%;
-    height:80vh;
-    border:0;
-    border-radius:18px;
+  width:100%;
+  height:80vh;
+  border:0;
+  border-radius:18px;
 }
 
 .close-video{
-    position:absolute;
-    top:-45px;
-    right:0;
-    color:white;
-    font-size:40px;
-    cursor:pointer;
+  position:absolute;
+  top:-48px;
+  right:0;
+  color:#fff;
+  font-size:42px;
+  cursor:pointer;
 }
 
 @media(max-width:768px){
-    .auto-video-row .video-box{
-        flex:0 0 280px;
+  .previous-work-frame{
+    padding:25px 15px;
+  }
+
+  .work-gallery.index-video-gallery .video-box{
+    flex:0 0 280px !important;
+    width:280px !important;
+    min-width:280px !important;
+    max-width:280px !important;
+  }
+
+  .work-gallery.index-video-gallery .video-box img{
+    height:500px;
+  }
+
+  @keyframes fpVideoMoveLeft{
+    from{
+      transform:translateX(0);
     }
 
-    .auto-video-row .video-box img{
-        width:280px;
-        height:500px;
+    to{
+      transform:translateX(-75%);
     }
+  }
 }
 
 /* =========================================================
@@ -1803,153 +1884,3 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
   border-color: var(--gold) !important;
 }
 
-/* ================================
-   HOME VIDEO AUTO CAROUSEL FINAL
-================================ */
-
-.work-gallery.index-video-gallery{
-    display:flex !important;
-    flex-direction:row !important;
-    flex-wrap:nowrap !important;
-    gap:25px;
-
-    width:100%;
-    overflow-x:auto !important;
-    overflow-y:hidden !important;
-
-    scroll-behavior:smooth;
-    padding:10px 10px 18px;
-
-    animation: fpVideoAutoMove 35s linear infinite;
-
-    scrollbar-width:thin;
-    scrollbar-color:#d4b06a #111;
-}
-
-.work-gallery.index-video-gallery:hover{
-    animation-play-state:paused;
-}
-
-.work-gallery.index-video-gallery::-webkit-scrollbar{
-    height:8px;
-}
-
-.work-gallery.index-video-gallery::-webkit-scrollbar-track{
-    background:#111;
-    border-radius:20px;
-}
-
-.work-gallery.index-video-gallery::-webkit-scrollbar-thumb{
-    background:#d4b06a;
-    border-radius:20px;
-}
-
-.work-gallery.index-video-gallery .video-box{
-    flex:0 0 315px !important;
-    width:315px !important;
-    min-width:315px !important;
-    max-width:315px !important;
-
-    position:relative;
-    cursor:pointer;
-}
-
-.work-gallery.index-video-gallery .video-box img{
-    width:315px;
-    height:560px;
-    object-fit:cover;
-    display:block;
-    border-radius:18px;
-}
-
-.play-btn{
-    position:absolute;
-    top:55%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    font-size:58px;
-    color:#fff;
-    text-shadow:0 0 18px #000;
-    pointer-events:none;
-}
-
-
-
-/* Full size video popup */
-
-.video-popup{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.92);
-    z-index:99999;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.video-popup-content{
-    position:relative;
-    width:92%;
-    max-width:900px;
-}
-
-.video-popup iframe{
-    width:100%;
-    height:80vh;
-    border:0;
-    border-radius:18px;
-}
-
-.close-video{
-    position:absolute;
-    top:-48px;
-    right:0;
-    color:#fff;
-    font-size:42px;
-    cursor:pointer;
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-    .work-gallery.index-video-gallery .video-box{
-        flex:0 0 280px !important;
-        width:280px !important;
-        min-width:280px !important;
-        max-width:280px !important;
-    }
-
-    .work-gallery.index-video-gallery .video-box img{
-        width:280px;
-        height:500px;
-    }
-
-    
-}
-
-.work-gallery.index-video-gallery{
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    gap:25px;
-
-    overflow-x:auto !important;
-    overflow-y:hidden !important;
-
-    animation: fpVideoScroll 30s linear infinite;
-}
-
-.work-gallery.index-video-gallery:hover{
-    animation-play-state:paused;
-}
-
-@keyframes fpVideoScroll{
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-60%);
-    }
-}
