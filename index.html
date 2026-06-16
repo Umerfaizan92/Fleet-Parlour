@@ -163,54 +163,68 @@
 
     </section>
 
-       <!-- PREVIOUS POLISHING WORK -->
+       
+  <!-- PREVIOUS POLISHING WORK -->
 
 <div class="previous-work-frame">
 
-  <div class="text-center mb-5">
-    <h2 class="section-title">Previous Polishing Work</h2>
-    <p class="text-muted">
-      Explore some of our recent truck polishing and metal restoration projects.
-    </p>
-  </div>
-
-<div class="work-gallery index-video-gallery auto-video-row">
-
-  <div class="video-box" onclick="openVideo('WchavwCFA6I')">
-    <p>Watch our latest mirror finish caravan polishing transformation.</p>
-    <img src="https://img.youtube.com/vi/WchavwCFA6I/maxresdefault.jpg" alt="Caravan polishing video">
-    <span class="play-btn">▶</span>
-  </div>
-
-  <div class="video-box" onclick="openVideo('OmJZuICXvYM')">
-    <p>Watch our Kenworth T409SAR Full Truck Mirror Polish.</p>
-    <img src="https://img.youtube.com/vi/OmJZuICXvYM/maxresdefault.jpg" alt="Kenworth polishing video">
-    <span class="play-btn">▶</span>
-  </div>
-
-  <div class="video-box" onclick="openVideo('KbLD1kwUMQI')">
-    <p>Watch our Another Kenworth Brought Back to Life | Truck Mirror Polish.</p>
-    <img src="https://img.youtube.com/vi/KbLD1kwUMQI/maxresdefault.jpg" alt="Truck mirror polish video">
-    <span class="play-btn">▶</span>
-  </div>
-
-</div>
-
-<div id="videoPopup" class="video-popup" onclick="closeVideo()">
-  <div class="video-popup-content" onclick="event.stopPropagation()">
-    <span class="close-video" onclick="closeVideo()">×</span>
-    <iframe id="popupVideo" allow="autoplay; fullscreen" allowfullscreen></iframe>
-  </div>
-</div>
-
-    <div class="text-center mt-4">
-      <a class="btn btn-gold btn-md" href="/services-gallery.html">View Full Gallery</a>
+    <div class="text-center mb-5">
+        <h2 class="section-title">Previous Polishing Work</h2>
+        <p class="text-muted">
+            Explore some of our recent truck polishing and metal restoration projects.
+        </p>
     </div>
 
-  </div>
-  </div>
-</section>
-  
+    <div class="work-gallery index-video-gallery">
+
+        <a class="video-box"
+           href="https://www.youtube.com/watch?v=WchavwCFA6I"
+           target="_blank">
+
+            <p>Watch our latest mirror finish caravan polishing transformation.</p>
+
+            <img src="https://img.youtube.com/vi/WchavwCFA6I/maxresdefault.jpg"
+                 alt="Caravan polishing video">
+
+            <span class="play-btn">▶</span>
+
+        </a>
+
+        <a class="video-box"
+           href="https://www.youtube.com/watch?v=OmJZuICXvYM"
+           target="_blank">
+
+            <p>Watch our Kenworth T409SAR Full Truck Mirror Polish.</p>
+
+            <img src="https://img.youtube.com/vi/OmJZuICXvYM/maxresdefault.jpg"
+                 alt="Kenworth polishing video">
+
+            <span class="play-btn">▶</span>
+
+        </a>
+
+        <a class="video-box"
+           href="https://www.youtube.com/watch?v=KbLD1kwUMQI"
+           target="_blank">
+
+            <p>Watch our Another Kenworth Brought Back to Life | Truck Mirror Polish.</p>
+
+            <img src="https://img.youtube.com/vi/KbLD1kwUMQI/maxresdefault.jpg"
+                 alt="Truck mirror polish video">
+
+            <span class="play-btn">▶</span>
+
+        </a>
+
+    </div>
+
+    <div class="text-center mt-4">
+        <a class="btn btn-gold btn-md" href="/services-gallery.html">
+            View Full Gallery
+        </a>
+    </div>
+
+</div>
     <!-- SERVICES HIGHLIGHTS -->
    
 <section class="py-5 bg-black text-center fp-home-frame" id="services">    
@@ -414,18 +428,32 @@
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
- 
-    <script>
-function openVideo(videoId){
-    document.getElementById("videoPopup").style.display = "flex";
-    document.getElementById("popupVideo").src =
-        "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-}
 
-function closeVideo(){
-    document.getElementById("videoPopup").style.display = "none";
-    document.getElementById("popupVideo").src = "";
-}
-  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const videoGallery = document.querySelector(".index-video-gallery");
+
+    if(videoGallery){
+
+        let scrollSpeed = 1;
+
+        setInterval(function(){
+
+            videoGallery.scrollLeft += scrollSpeed;
+
+            if(
+                videoGallery.scrollLeft >=
+                (videoGallery.scrollWidth - videoGallery.clientWidth)
+            ){
+                videoGallery.scrollLeft = 0;
+            }
+
+        }, 30);
+
+    }
+
+});
+</script>
   </body>
 </html>
