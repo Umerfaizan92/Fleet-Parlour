@@ -449,48 +449,48 @@ li {
   max-width: 315px;
   display: block;
 }
-.video-auto-carousel{
+.index-video-gallery{
     overflow:hidden;
     width:100%;
 }
 
-.video-track{
+.index-video-gallery{
     display:flex;
     gap:25px;
     width:max-content;
-    animation: videoAutoScroll 35s linear infinite;
+    animation: fpVideoMove 35s linear infinite;
 }
 
-.video-track:hover{
+.index-video-gallery:hover{
     animation-play-state:paused;
 }
 
-.video-auto-carousel .video-box{
+.index-video-gallery .video-box{
     flex:0 0 315px;
 }
 
-.video-auto-carousel iframe{
+.index-video-gallery iframe{
     width:315px;
     height:560px;
     border:0;
     border-radius:18px;
 }
 
-@keyframes videoAutoScroll{
-    from{
-        transform:translateX(0);
+@keyframes fpVideoMove{
+    0%{
+        transform:translateX(100%);
     }
-    to{
-        transform:translateX(-50%);
+    100%{
+        transform:translateX(-100%);
     }
 }
 
 @media(max-width:768px){
-    .video-auto-carousel .video-box{
+    .index-video-gallery .video-box{
         flex:0 0 280px;
     }
 
-    .video-auto-carousel iframe{
+    .index-video-gallery iframe{
         width:280px;
         height:500px;
     }
