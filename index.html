@@ -394,29 +394,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!gallery) return;
 
-  let speed = 1;
-  let isResetting = false;
-
+  gallery.style.scrollBehavior = "auto";
   gallery.scrollLeft = 0;
 
-  setInterval(function () {
+  let speed = 0.7;
+  let paused = false;
 
-    if (isResetting) return;
+  function moveCarousel() {
+    if (!paused) {
+      const maxScroll = gallery.scrollWidth - gallery.clientWidth;
 
-    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+      if (gallery.scrollLeft >= maxScroll - 2) {
+        paused = true;
 
-    gallery.scrollLeft += speed;
+        setTimeout(function () {
+          gallery.scrollLeft = 0;
 
-    if (gallery.scrollLeft >= maxScroll - 5) {
-      isResetting = true;
+          setTimeout(function () {
+            paused = false;
+          }, 400);
 
-      setTimeout(function () {
-        gallery.scrollLeft = 0;
-        isResetting = false;
-      }, 300);
+        }, 600);
+      } else {
+        gallery.scrollLeft += speed;
+      }
     }
 
-  }, 25);
+    requestAnimationFrame(moveCarousel);
+  }
+
+  moveCarousel();
 });
 </script>
 
