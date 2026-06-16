@@ -1926,19 +1926,7 @@ html body nav.navbar .container button.navbar-toggler.fp-menu-frame:active {
         height:500px;
     }
 
-    @keyframes fpVideoAutoMove{
-        0%{
-            transform:translateX(0);
-        }
-
-        50%{
-            transform:translateX(-45%);
-        }
-
-        100%{
-            transform:translateX(0);
-        }
-    }
+    
 }
 
 .work-gallery.index-video-gallery{
