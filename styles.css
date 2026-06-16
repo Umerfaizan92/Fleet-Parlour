@@ -533,8 +533,23 @@ li {
   transform:none !important;
 }
 
-.work-gallery.index-video-gallery .video-box p{
-    color:var(--text-muted) !important;
+/* FORCE video titles to website text colour */
+
+.work-gallery.index-video-gallery a.video-box p,
+.work-gallery.index-video-gallery .video-box p,
+.index-video-gallery .video-box p{
+    color:#d2d2d2 !important;
+    text-decoration:none !important;
+}
+
+.work-gallery.index-video-gallery a.video-box,
+.work-gallery.index-video-gallery .video-box{
+    text-decoration:none !important;
+}
+
+.work-gallery.index-video-gallery a.video-box:hover p,
+.work-gallery.index-video-gallery .video-box:hover p{
+    color:#d2d2d2 !important;
 }
 
 
