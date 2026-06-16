@@ -449,6 +449,53 @@ li {
   max-width: 315px;
   display: block;
 }
+.video-auto-carousel{
+    overflow:hidden;
+    width:100%;
+}
+
+.video-track{
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation: videoAutoScroll 35s linear infinite;
+}
+
+.video-track:hover{
+    animation-play-state:paused;
+}
+
+.video-auto-carousel .video-box{
+    flex:0 0 315px;
+}
+
+.video-auto-carousel iframe{
+    width:315px;
+    height:560px;
+    border:0;
+    border-radius:18px;
+}
+
+@keyframes videoAutoScroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+@media(max-width:768px){
+    .video-auto-carousel .video-box{
+        flex:0 0 280px;
+    }
+
+    .video-auto-carousel iframe{
+        width:280px;
+        height:500px;
+    }
+}
+
 
 
 /* =========================================================
