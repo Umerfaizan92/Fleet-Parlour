@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return new Intl.NumberFormat('en-AU').format(n);
   };
 
-  fetch('/api/social-stats', { headers: { Accept: 'application/json' } })
+      fetch('https://api.fleetparlour.com.au/api/social-stats', { headers: { Accept: 'application/json' } })    .then((response) => {
     .then((response) => {
       if (!response.ok) throw new Error('Social stats unavailable');
       return response.json();
