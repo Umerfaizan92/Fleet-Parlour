@@ -1,0 +1,22 @@
+FLEET PARLOUR FINAL BUILD — LOCAL TEST
+
+1. Double-click START-FLEET-PARLOUR.bat
+2. Use only: http://localhost:3000/
+3. Do NOT use VS Code Go Live / port 5500 for full-system testing.
+
+Check:
+- Mobile menu opens/closes.
+- Three home-page video previews are visible.
+- Home service cards all say "View Gallery" and open services-gallery.html.
+- Contact form submits successfully.
+- Email notification arrives.
+- Thank You page opens.
+- The same FP-XXXXXXXX reference appears in the email and Thank You page.
+
+If Windows Firewall prompts for Node.js access, allow access on your private network.
+
+SOCIAL STATS CHECK:
+- Open http://localhost:3000/api/social-stats?refresh=1 for a forced fresh API test.
+- Facebook and Instagram use separate tokens.
+- TikTok needs TIKTOK_ACCESS_TOKEN with user.info.stats; no TikTok user ID/open_id is required.
+- The shipped build does not include an old social-stats-cache.json. It is created automatically after the first API refresh.

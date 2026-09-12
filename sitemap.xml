@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://fleetparlour.com.au/</loc>
-</url>
+  <url>
+    <loc>https://fleetparlour.com.au/</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
 
-<url>
-<loc>https://fleetparlour.com.au/about.html</loc>
-</url>
+  <url>
+    <loc>https://fleetparlour.com.au/about.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
 
-<url>
-<loc>https://fleetparlour.com.au/contact.html</loc>
-</url>
+  <url>
+    <loc>https://fleetparlour.com.au/contact.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
 
-<url>
-<loc>https://fleetparlour.com.au/services-gallery.html</loc>
-</url>
+  <url>
+    <loc>https://fleetparlour.com.au/services-gallery.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/truck-polishing-perth.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/bull-bar-polishing-perth.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/fuel-tank-polishing-perth.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/truck-rim-polishing-perth.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/aluminium-polishing-perth.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/metal-polishing-perth.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/stainless-steel-polishing-perth.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://fleetparlour.com.au/policies%20-%20terms.html</loc>
+    <lastmod>2026-09-11</lastmod>
+  </url>
 
 </urlset>

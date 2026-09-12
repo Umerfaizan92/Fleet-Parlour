@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Thank You | Quote Request Received | Fleet Parlour Perth</title>
+
+  <meta
+    name="description"
+    content="Your Fleet Parlour quote request has been received successfully."
+  >
+
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Prevent an old Thank You page from being reused from cache -->
+  <meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+  >
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="favicon.ico"
+  >
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css?v=2.5.1"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <style>
+    .fp-thankyou-page {
+      min-height: calc(100vh - 90px);
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4, 4, 4, .97) 0%,
+          rgba(4, 4, 4, .91) 48%,
+          rgba(4, 4, 4, .60) 72%,
+          rgba(4, 4, 4, .38) 100%
+        ),
+        url('images/Hero Background.jpg') center 42% / cover no-repeat;
+
+      padding: 72px 0;
+    }
+
+    .fp-thankyou-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 50% 28%,
+          rgba(212, 176, 106, .13),
+          transparent 35%
+        );
+      pointer-events: none;
+    }
+
+    .fp-thankyou-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .fp-thankyou-card {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(10, 10, 10, .94),
+          rgba(5, 5, 5, .97)
+        );
+      border: 1px solid rgba(212, 176, 106, .78);
+      border-radius: 24px;
+      box-shadow:
+        0 0 45px rgba(212, 176, 106, .13),
+        0 28px 70px rgba(0, 0, 0, .48);
+      padding: clamp(28px, 5vw, 58px);
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .fp-success-ring {
+      width: 92px;
+      height: 92px;
+      margin: -4px auto 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #050505;
+      font-size: 2.35rem;
+      background: linear-gradient(135deg, #f8dc91, #c99a3a);
+      border: 5px solid rgba(255, 229, 161, .8);
+      box-shadow: 0 0 30px rgba(212, 176, 106, .35);
+    }
+
+    .fp-thankyou-title {
+      margin: 0 0 10px;
+      font-size: clamp(2.35rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: #f4cf73;
+    }
+
+    .fp-thankyou-lead {
+      color: #fff;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .fp-thankyou-copy {
+      color: rgba(255, 255, 255, .74);
+      max-width: 760px;
+      margin: 0 auto 28px;
+      line-height: 1.75;
+    }
+
+    .fp-reference-box {
+      width: min(100%, 510px);
+      margin: 0 auto 30px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(212, 176, 106, .72);
+      background: rgba(212, 176, 106, .055);
+    }
+
+    .fp-reference-label {
+      color: rgba(255, 255, 255, .68);
+      font-size: .92rem;
+      margin-bottom: 5px;
+    }
+
+    .fp-reference-code {
+      color: #f5d477;
+      font-size: clamp(1.55rem, 4vw, 2.15rem);
+      font-weight: 800;
+      letter-spacing: .07em;
+      overflow-wrap: anywhere;
+    }
+
+    .fp-reference-note {
+      color: rgba(255, 255, 255, .58);
+      font-size: .83rem;
+      margin-top: 6px;
+    }
+
+    .fp-next-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 0 0 30px;
+      padding: 17px;
+      border: 1px solid rgba(255, 255, 255, .11);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, .32);
+      text-align: left;
+    }
+
+    .fp-next-item {
+      display: flex;
+      gap: 13px;
+      padding: 7px;
+    }
+
+    .fp-next-icon {
+      color: #e8bd5c;
+      font-size: 1.25rem;
+      padding-top: 2px;
+      min-width: 25px;
+    }
+
+    .fp-next-item strong {
+      display: block;
+      color: #f5d477;
+      margin-bottom: 3px;
+      font-size: .94rem;
+    }
+
+    .fp-next-item span {
+      color: rgba(255, 255, 255, .68);
+      font-size: .86rem;
+      line-height: 1.55;
+    }
+
+    .fp-thankyou-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .fp-thankyou-actions .btn {
+      min-width: 185px;
+    }
+
+    .fp-tagline {
+      margin-top: 24px;
+      color: #d9af55;
+      font-style: italic;
+      letter-spacing: .08em;
+      font-size: 1.02rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .fp-thankyou-page {
+        padding: 42px 0;
+        background-position: 62% center;
+      }
+
+      .fp-next-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fp-thankyou-card {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body class="dark-body">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom">
+    <div class="container">
+
+      <a class="navbar-brand fp-logo-frame" href="index.html">
+        <img src="images/Logo.png" alt="Fleet Parlour" class="logo">
+      </a>
+
+      <button
+        class="navbar-toggler fp-menu-frame"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMain"
+        aria-controls="navMain"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="fp-menu-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="services-gallery.html">Services Gallery</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="policies - terms.html">Privacy &amp; Terms</a>
+          </li>
+        </ul>
+
+        <div class="ms-auto">
+          <a class="btn btn-pill btn-gold" href="contact.html#quote">
+            Get a Free Quote
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="fp-thankyou-page">
+
+    <div class="container">
+      <div class="fp-thankyou-shell">
+
+        <section class="fp-thankyou-card" aria-labelledby="thankYouTitle">
+
+          <div class="fp-success-ring" aria-hidden="true">
+            <i class="fa-solid fa-check"></i>
+          </div>
+
+          <h1 id="thankYouTitle" class="fp-thankyou-title">
+            Thank You!
+          </h1>
+
+          <div class="fp-thankyou-lead">
+            Your quote request has been received successfully.
+          </div>
+
+          <p class="fp-thankyou-copy">
+            We appreciate you choosing Fleet Parlour. Your enquiry and job
+            photos have been safely submitted. Our team will review the
+            details and get back to you as soon as possible.
+          </p>
+
+
+          <!-- REFERENCE CODE -->
+          <div class="fp-reference-box">
+
+            <div class="fp-reference-label">
+              Your Reference Code
+            </div>
+
+            <div class="fp-reference-code" id="referenceCode">
+              FP-RECEIVED
+            </div>
+
+            <div class="fp-reference-note">
+              Please keep this reference code for future correspondence.
+            </div>
+
+          </div>
+
+
+          <div class="fp-next-grid">
+
+            <div class="fp-next-item">
+              <div class="fp-next-icon">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+
+              <div>
+                <strong>What happens next?</strong>
+                <span>
+                  We’ll review your photos, job details and requested
+                  service before contacting you.
+                </span>
+              </div>
+            </div>
+
+
+            <div class="fp-next-item">
+              <div class="fp-next-icon">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+
+              <div>
+                <strong>Fleet Parlour notified</strong>
+                <span id="emailStatusText">
+                  Your enquiry is safely saved in our system.
+                </span>
+              </div>
+            </div>
+
+
+            <div class="fp-next-item">
+              <div class="fp-next-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+
+              <div>
+                <strong>Need to speak now?</strong>
+                <span>
+                  Call or WhatsApp us directly if your enquiry is urgent.
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="fp-thankyou-actions">
+
+            <a class="btn btn-gold" href="index.html">
+              <i class="fa-solid fa-house me-2"></i>
+              Back to Homepage
+            </a>
+
+            <a
+              class="btn btn-dark-outline"
+              href="https://wa.me/message/A2DKAY4DDHWVO1"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-whatsapp me-2"></i>
+              WhatsApp Us
+            </a>
+
+          </div>
+
+          <div class="fp-tagline">
+            Bringing Back the Shine
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="js/thank-you.js?v=1.0.0"></script>
+
+</body>
+</html>
