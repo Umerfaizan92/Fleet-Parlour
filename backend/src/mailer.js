@@ -1,10 +1,9 @@
-import nodemailer from 'nodemailer';
+import fs from 'fs/promises';
+import { Resend } from 'resend';
 
 function configured(env) {
   return Boolean(
-    env.SMTP_HOST &&
-    env.SMTP_USER &&
-    env.SMTP_PASS &&
+    env.RESEND_API_KEY &&
     env.NOTIFY_TO
   );
 }
@@ -13,28 +12,15 @@ export async function sendEnquiryNotification(env, enquiry, files = []) {
   if (!configured(env)) {
     return {
       sent: false,
-      reason: 'smtp_not_configured'
+      reason: 'resend_not_configured'
     };
   }
 
-  const transporter = nodemailer.createTransport({
-    host: env.SMTP_HOST,
-    port: Number(env.SMTP_PORT || 587),
-    secure: String(env.SMTP_SECURE).toLowerCase() === 'true',
-
-    auth: {
-      user: env.SMTP_USER,
-      pass: env.SMTP_PASS
-    },
-
-    connectionTimeout: 10000,
-    greetingTimeout: 10000,
-    socketTimeout: 20000
-  });
+  const resend = new Resend(env.RESEND_API_KEY);
 
   // IMPORTANT:
   // This reference comes directly from server.js.
-  // We do NOT generate another reference here.
+  // We do NOT generate a different reference here.
   const referenceCode =
     enquiry.reference_code ||
     `FP-${String(enquiry.id)
@@ -87,11 +73,22 @@ export async function sendEnquiryNotification(env, enquiry, files = []) {
     `Internal ID: ${enquiry.id}`
   ].join('\n');
 
-  await transporter.sendMail({
-    from: env.NOTIFY_FROM || env.SMTP_USER,
+  // Convert uploaded photos/files to a format Resend can send.
+  const attachments = await Promise.all(
+    files.map(async (file) => ({
+      filename: file.originalname,
+      content: await fs.readFile(file.path)
+    }))
+  );
 
-    to: env.NOTIFY_TO,
+  const { data, error } = await resend.emails.send({
+    from:
+      env.NOTIFY_FROM ||
+      'Fleet Parlour Website <quotes@fleetparlour.com.au>',
 
+    to: [env.NOTIFY_TO],
+
+    // When you click Reply, it replies directly to the customer.
     replyTo: enquiry.email,
 
     subject:
@@ -99,14 +96,18 @@ export async function sendEnquiryNotification(env, enquiry, files = []) {
 
     text,
 
-    attachments: files.map((file) => ({
-      filename: file.originalname,
-      path: file.path
-    }))
+    attachments
   });
+
+  if (error) {
+    throw new Error(
+      `Resend email failed: ${error.message || JSON.stringify(error)}`
+    );
+  }
 
   return {
     sent: true,
-    reference_code: referenceCode
+    reference_code: referenceCode,
+    email_id: data?.id || null
   };
 }
