@@ -12,6 +12,7 @@ import { z } from 'zod';
 import { createDb } from './db.js';
 import { sendEnquiryNotification } from './mailer.js';
 import { createSocialStatsService } from './social-stats.js';
+import { publicAssetsOnly } from './public-assets.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const backendRoot = path.resolve(__dirname, '..');
@@ -537,13 +538,13 @@ app.use(
 */
 
 app.use(
-  express.static(
+  publicAssetsOnly(express.static(
     siteRoot,
     {
       extensions: ['html'],
       index: 'index.html'
     }
-  )
+  ))
 );
 
 /*
