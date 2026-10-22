@@ -4,6 +4,10 @@ import express from 'express';
 import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import { spawn } from 'node:child_process';
+import { once } from 'node:events';
+import { fileURLToPath } from 'node:url';
+import net from 'node:net';
 import { isPublicAssetPath, publicAssetsOnly } from '../src/public-assets.js';
 
 test('private runtime data and repository files cannot enter static serving', () => {
@@ -65,4 +69,45 @@ test('HTTP requests cannot retrieve customer files even when they exist below si
   for (const url of ['/contact', '/contact.html', '/images/hero.webp', '/api/health']) {
     assert.equal((await fetch(base + url)).status, 200, url);
   }
+});
+
+test('full application boots and keeps admin and backend files private', async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'fleet-boot-test-'));
+  const probe = net.createServer().listen(0, '127.0.0.1');
+  await once(probe, 'listening');
+  const port = probe.address().port;
+  await new Promise(resolve => probe.close(resolve));
+  const child = spawn(process.execPath, ['src/server.js'], {
+    cwd: fileURLToPath(new URL('../', import.meta.url)),
+    env: { ...process.env, PORT: String(port), NODE_ENV: 'test',
+      DATABASE_PATH: path.join(root, 'test.sqlite'), UPLOAD_DIR: path.join(root, 'uploads'),
+      ADMIN_API_KEY: '', RESEND_API_KEY: '', NOTIFY_TO: '' },
+    stdio: ['ignore', 'pipe', 'pipe']
+  });
+  let output = '';
+  child.stdout.on('data', data => { output += data; });
+  child.stderr.on('data', data => { output += data; });
+  t.after(async () => {
+    if (child.exitCode === null) {
+      child.kill('SIGTERM');
+      await once(child, 'exit');
+    }
+    await rm(root, { recursive: true, force: true });
+  });
+  const base = `http://127.0.0.1:${port}`;
+  let healthy = false;
+  for (let attempt = 0; attempt < 40; attempt++) {
+    if (child.exitCode !== null) throw new Error(`Application failed to boot: ${output}`);
+    try { healthy = (await fetch(base + '/api/health')).status === 200; } catch {}
+    if (healthy) break;
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+  assert.equal(healthy, true, output);
+  for (const url of ['/', '/contact', '/contact.html', '/styles.css']) {
+    assert.equal((await fetch(base + url)).status, 200, url);
+  }
+  for (const url of ['/backend/src/server.js', '/backend/package.json', '/backend/data/tiktok-oauth.json']) {
+    assert.equal((await fetch(base + url)).status, 404, url);
+  }
+  assert.equal((await fetch(base + '/api/admin/enquiries')).status, 401);
 });
