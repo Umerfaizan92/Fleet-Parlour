@@ -320,18 +320,21 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!socialCards.length) return;
 
   const formatCount = (value) => {
+    if (value === null || value === undefined || value === '') return '—';
     const n = Number(value);
-    if (!Number.isFinite(n)) return '—';
+    if (!Number.isFinite(n) || n < 0) return '—';
     return new Intl.NumberFormat('en-AU', { notation: 'compact', maximumFractionDigits: 1 }).format(n);
   };
 
   const formatExact = (value) => {
+    if (value === null || value === undefined || value === '') return '—';
     const n = Number(value);
-    if (!Number.isFinite(n)) return '—';
+    if (!Number.isFinite(n) || n < 0) return '—';
     return new Intl.NumberFormat('en-AU').format(n);
   };
 
-     fetch('https://api.fleetparlour.com.au/api/social-stats', { headers: { Accept: 'application/json' } })    .then((response) => {
+  fetch('https://api.fleetparlour.com.au/api/social-stats', { headers: { Accept: 'application/json' } })
+    .then((response) => {
       if (!response.ok) throw new Error('Social stats unavailable');
       return response.json();
     })
@@ -344,9 +347,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const followersEl = card.querySelector('[data-social-followers]');
         const likesEl = card.querySelector('[data-social-likes]');
 
-        if (stats.available) {
-          card.classList.add('is-live');
-          card.classList.remove('is-unavailable');
+        card.classList.toggle('is-live', Boolean(stats.available));
+        card.classList.toggle('is-unavailable', !stats.available);
+        let note = card.querySelector('[data-social-status]');
+        if (!note) {
+          note = document.createElement('small');
+          note.dataset.socialStatus = '';
+          card.appendChild(note);
+        }
+        note.textContent = stats.stale ? 'Last known count' : !stats.available ? 'Count unavailable' : '';
+        note.title = stats.stale && stats.last_success_at
+          ? `Last verified ${new Date(stats.last_success_at).toLocaleString('en-AU')}` : '';
+
+        if (stats.available || stats.stale) {
           if (followersEl) {
             followersEl.textContent = formatCount(stats.followers);
             followersEl.title = stats.followers == null ? '' : formatExact(stats.followers);
@@ -357,8 +370,8 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         } else {
           card.classList.add('is-unavailable');
-          if (followersEl) followersEl.textContent = '—';
-          if (likesEl) likesEl.textContent = '—';
+          if (followersEl) { followersEl.textContent = '—'; followersEl.title = ''; }
+          if (likesEl) { likesEl.textContent = '—'; likesEl.title = ''; }
         }
       });
 
@@ -378,9 +391,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const liveCount = Object.values(platforms).filter((item) => item?.available).length;
         if (liveCount > 0) {
           const when = data.updated_at ? new Date(data.updated_at).toLocaleString('en-AU') : 'recently';
-          status.textContent = `Live social data • ${liveCount}/4 platforms connected • Updated ${when}`;
+          const partial = data.incomplete || Object.values(platforms).some(item =>
+            !item?.available || item.followers == null || item.likes == null);
+          status.textContent = `${partial ? 'Partial social totals' : 'Live social data'} • ${liveCount}/4 platforms connected • Updated ${when}`;
+          if (Object.values(platforms).some(item => item?.stale)) {
+            status.textContent += ' • Includes last known counts';
+          }
         } else {
-          status.textContent = 'Live counters are ready. Connect the social API credentials in the backend to activate them.';
+          status.textContent = 'Live counts are temporarily unavailable. Any displayed figures are last known counts.';
         }
       }
     })

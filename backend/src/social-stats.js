@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const DEFAULT_TTL_MS = 30 * 60 * 1000;
+const MAX_STALE_MS = 7 * 24 * 60 * 60 * 1000;
 
 function asInt(value) {
   if (value === null || value === undefined || value === '') return null;
@@ -51,7 +51,9 @@ async function fetchJson(url, options = {}) {
         data?.message ||
         `${response.status} ${response.statusText}`;
 
-      throw new Error(message);
+      const error = new Error(message);
+      error.code = data?.error?.code;
+      throw error;
     }
 
     return data;
@@ -365,7 +367,7 @@ async function getInstagram(env) {
 
 async function getFacebook(env) {
   const token = String(
-    env.META_ACCESS_TOKEN || ''
+    env.FACEBOOK_PAGE_ACCESS_TOKEN || env.META_ACCESS_TOKEN || ''
   ).trim();
 
   const pageId = String(
@@ -399,9 +401,7 @@ async function getFacebook(env) {
 
     return platformResult({
       configured: true,
-      followers:
-        page.followers_count ??
-        page.fan_count,
+      followers: page.followers_count,
       likes: page.fan_count,
       extra: {
         followers_label: 'Followers',
@@ -411,7 +411,12 @@ async function getFacebook(env) {
   } catch (err) {
     return platformResult({
       configured: true,
-      error: err.message
+      error: Number(err.code) === 190
+        ? 'Facebook connection needs to be renewed.'
+        : 'Facebook statistics are temporarily unavailable.',
+      extra: {
+        error_code: Number(err.code) === 190 ? 'reauthorization_required' : 'upstream_error'
+      }
     });
   }
 }
@@ -450,14 +455,8 @@ export function createSocialStatsService(
     'social-stats-cache.json'
   );
 
-  const ttlMs = Math.max(
-    5 * 60 * 1000,
-    Number(
-      env.SOCIAL_STATS_CACHE_MINUTES || 30
-    ) *
-      60 *
-      1000
-  );
+  const cacheMinutes = Number(env.SOCIAL_STATS_CACHE_MINUTES || 30);
+  const ttlMs = Math.max(5, Number.isFinite(cacheMinutes) ? cacheMinutes : 30) * 60 * 1000;
 
   let memory = null;
   let loadedFromDisk = false;
@@ -494,10 +493,30 @@ export function createSocialStatsService(
       youtube
     };
 
+    const now = new Date().toISOString();
+    for (const [name, result] of Object.entries(platforms)) {
+      if (result.available) {
+        result.last_success_at = now;
+        continue;
+      }
+      const previous = memory?.platforms?.[name];
+      const lastSuccess = previous?.last_success_at ||
+        (previous?.available ? memory.updated_at : null);
+      const age = Date.now() - new Date(lastSuccess || '').getTime();
+      if (result.configured && (previous?.available || previous?.stale) &&
+          age >= 0 && age <= MAX_STALE_MS) {
+        result.followers = asInt(previous.followers);
+        result.likes = asInt(previous.likes);
+        result.stale = true;
+        result.last_success_at = lastSuccess;
+      }
+    }
+
     const fresh = {
       ok: true,
-      updated_at:
-        new Date().toISOString(),
+      updated_at: now,
+      incomplete: Object.values(platforms).some(item =>
+        !item.available || item.followers === null || item.likes === null),
       cache_minutes:
         Math.round(ttlMs / 60000),
       platforms,
@@ -505,36 +524,11 @@ export function createSocialStatsService(
         computeTotals(platforms)
     };
 
-    const anyAvailable =
-      Object.values(platforms).some(
-        platform => platform.available
-      );
-
-    if (anyAvailable || !memory) {
-      memory = fresh;
-
-      try {
-        fs.mkdirSync(
-          path.dirname(cacheFile),
-          { recursive: true }
-        );
-
-        fs.writeFileSync(
-          cacheFile,
-          JSON.stringify(
-            fresh,
-            null,
-            2
-          )
-        );
-      } catch {}
-    } else if (memory) {
-      return {
-        ...memory,
-        stale: true,
-        refresh_errors: platforms
-      };
-    }
+    memory = fresh;
+    try {
+      fs.mkdirSync(path.dirname(cacheFile), { recursive: true });
+      fs.writeFileSync(cacheFile, JSON.stringify(fresh, null, 2));
+    } catch {}
 
     return fresh;
   }

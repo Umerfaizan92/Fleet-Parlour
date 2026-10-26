@@ -29,11 +29,20 @@ Edit `backend/.env` and fill only the variables for platforms you want to connec
 
 ```
 META_GRAPH_VERSION=
+FACEBOOK_PAGE_ACCESS_TOKEN=
 META_ACCESS_TOKEN=
 FACEBOOK_PAGE_ID=
 ```
 
-`META_ACCESS_TOKEN` is used only for Facebook. Use a Page/Meta token that is permitted to read the Page statistics.
+Use `FACEBOOK_PAGE_ACCESS_TOKEN` for a dedicated Facebook Page token. If it is blank, `META_ACCESS_TOKEN` remains supported for existing deployments. Both are used only for Facebook; the Instagram token stays separate.
+
+### Recovery after a revoked Facebook token
+
+If `/api/social-stats` reports `platforms.facebook.error_code: "reauthorization_required"`, renew the Facebook authorization and generate a replacement Page access token for the configured `FACEBOOK_PAGE_ID`. Store it privately in the backend host's `FACEBOOK_PAGE_ACCESS_TOKEN` variable (or replace the existing `META_ACCESS_TOKEN` if using the legacy setup). Do not paste tokens into GitHub, website JavaScript, or chat. Redeploy/restart the backend, then check `/api/social-stats?refresh=1` for `platforms.facebook.available: true` and a numeric `followers` value.
+
+A revoked credential cannot be repaired by changing frontend JavaScript. If the host is Railway, update the variable on the backend service in Railway, not in GitHub Pages settings. A nonempty `FACEBOOK_PAGE_ACCESS_TOKEN` takes precedence, so replace that value if already set.
+
+The API preserves each platform's last successful counts independently for at most seven days, including across server restarts when the data directory is persistent. Retained figures are marked `stale: true`, with their original `last_success_at`. They remain unavailable for live-connection reporting. The homepage labels them “Last known count” and labels incomplete totals “Partial social totals”. If no valid historical count exists, it shows a dash rather than inventing a number. Facebook Page Likes are never substituted for an unavailable follower count.
 
 ### Instagram
 
@@ -80,3 +89,5 @@ This is a combined marketing metric, not a perfectly identical measurement acros
 4. Open `http://localhost:3000/` and scroll to **Follow Fleet Parlour**.
 
 If a platform is not configured, the website shows an em dash (`—`) instead of inventing a number.
+
+Regression checks: `node --test backend/test/social-stats.test.js` (from the repository root).
