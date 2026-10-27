@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run offline reporting unit tests
         run: |
+          python3 scripts/test_seo_public_audit.py
           python3 scripts/test_seo_review_queue.py
           python3 scripts/test_seo_analytics_report.py
       - name: Audit public pages without changing the site
