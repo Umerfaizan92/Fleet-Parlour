@@ -24,7 +24,9 @@ class PageParser(html.parser.HTMLParser):
         a = dict(attrs)
         if tag == "html": self.lang = a.get("lang", "")
         if tag == "title": self.title_on = True
-        if tag == "h1": self.h1_on = True
+        if tag == "h1":
+            self.h1_on = True
+            self.h1.append("")
         if tag == "img":
             self.images += 1
             if not a.get("alt", "").strip(): self.images_missing_alt += 1
@@ -40,7 +42,7 @@ class PageParser(html.parser.HTMLParser):
         if tag == "h1": self.h1_on = False
     def handle_data(self, data):
         if self.title_on: self.title += data
-        if self.h1_on and data.strip(): self.h1.append(data.strip())
+        if self.h1_on and self.h1: self.h1[-1] += data
 
 def fetch(url):
     request = urllib.request.Request(url, headers={"User-Agent": "PublicSEOAudit/1.0 (read-only)"})
