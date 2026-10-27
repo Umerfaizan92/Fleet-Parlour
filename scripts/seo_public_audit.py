@@ -88,6 +88,6 @@ def main():
         report["pages"].append(item)
     os.makedirs("seo-audit-report", exist_ok=True)
     with open("seo-audit-report/report.json", "w") as f: json.dump(report, f, indent=2)
-    print(json.dumps({"site": BASE, "pages_checked": len(report["pages"]), "pages_with_flags": sum(bool(x.get("review_flags") or x.get("error")) for x in report["pages"]), "report": "seo-audit-report/report.json"}, indent=2))
+    print(json.dumps({"site": BASE, "pages_checked": len(report["pages"]), "pages_with_flags": sum(bool(x.get("review_flags") or x.get("error") or x.get("warning")) for x in report["pages"]), "findings": [{"url": x["url"], "review_flags": x.get("review_flags", []), "error": x.get("error"), "warning": x.get("warning")} for x in report["pages"] if x.get("review_flags") or x.get("error") or x.get("warning")], "sitemap_warnings": report["warnings"], "report": "seo-audit-report/report.json"}, indent=2))
 
 if __name__ == "__main__": main()
