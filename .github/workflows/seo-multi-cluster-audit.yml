@@ -1,0 +1,45 @@
+name: Read-only multi-cluster SEO audit
+on:
+  schedule:
+    - cron: '41 4 * * 2'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/seo_*.py'
+      - 'scripts/test_seo_*.py'
+      - '.github/workflows/seo-multi-cluster-audit.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run offline reporting unit tests
+        run: |
+          python3 scripts/test_seo_public_audit.py
+          python3 scripts/test_seo_review_queue.py
+          python3 scripts/test_seo_analytics_report.py
+      - name: Audit public pages without changing the site
+        env:
+          SEO_SITE_URL: ${{ vars.SEO_SITE_URL || 'https://fleetparlour.com.au' }}
+          SEO_MAX_PAGES: '15'
+        run: python3 scripts/seo_public_audit.py
+      - name: Build five-cluster review queue (no publishing)
+        run: python3 scripts/seo_review_queue.py
+      - name: Generate offline analytics report (no Google data assumed)
+        run: python3 scripts/seo_analytics_report.py
+      - name: Upload offline analytics status
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-analytics-status
+          path: seo-analytics-report/
+          retention-days: 30
+      - name: Upload structured audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-multi-cluster-audit
+          path: seo-audit-report/
+          retention-days: 30
