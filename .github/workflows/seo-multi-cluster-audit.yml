@@ -1,0 +1,24 @@
+name: Read-only multi-cluster SEO audit
+on:
+  schedule:
+    - cron: '41 4 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit public pages without changing the site
+        env:
+          SEO_SITE_URL: ${{ vars.SEO_SITE_URL || 'https://fleetparlour.com.au' }}
+          SEO_MAX_PAGES: '15'
+        run: python3 scripts/seo_public_audit.py
+      - name: Upload structured audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-multi-cluster-audit
+          path: seo-audit-report/report.json
+          retention-days: 30
