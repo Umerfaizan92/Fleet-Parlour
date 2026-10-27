@@ -11,14 +11,18 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+      - name: Run offline reporting unit tests
+        run: python3 scripts/test_seo_review_queue.py
       - name: Audit public pages without changing the site
         env:
           SEO_SITE_URL: ${{ vars.SEO_SITE_URL || 'https://fleetparlour.com.au' }}
           SEO_MAX_PAGES: '15'
         run: python3 scripts/seo_public_audit.py
+      - name: Build five-cluster review queue (no publishing)
+        run: python3 scripts/seo_review_queue.py
       - name: Upload structured audit report
         uses: actions/upload-artifact@v4
         with:
           name: seo-multi-cluster-audit
-          path: seo-audit-report/report.json
+          path: seo-audit-report/
           retention-days: 30
